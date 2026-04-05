@@ -1,0 +1,5 @@
+{
+  "name": "Clearzen Audition Casablanca",
+  "description": "Expertise auditive premium à Casablanca. Bilan gratuit, appareillage, suivi personnalisé et technologies de pointe (Signia, Starkey, Phonak, Widex, Oticon, Resound).",
+  "requestFramePermissions": ["geolocation"]
+}
