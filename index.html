@@ -1610,3 +1610,218 @@
     <script type="module" src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <meta name="description" content="Expertise auditive premium à Casablanca. Bilan gratuit, appareillage, suivi personnalisé et technologies de pointe (Signia, Starkey, Phonak, Widex, Oticon, Resound).">
+    <link rel="canonical" href="https://clearzen.ma/">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Clearzen Audition",
+      "image": "LOGO CLEANZEN.png",
+      "@id": "https://clearzen.ma/",
+      "url": "https://clearzen.ma/",
+      "telephone": "+212522000000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Casablanca, Maroc",
+        "addressLocality": "Casablanca",
+        "postalCode": "20000",
+        "addressCountry": "MA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.5731,
+        "longitude": -7.5898
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearzen.ma/">
+    <meta property="og:title" content="Clearzen Audition Casablanca | Expertise Auditive Premium">
+    <meta property="og:description" content="Expertise auditive premium à Casablanca. Bilan gratuit, appareillage, suivi personnalisé et technologies de pointe.">
+    <meta property="og:image" content="LOGO CLEANZEN.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="LOGO CLEANZEN.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1B365D',
+                        accent: '#E31E24',
+                        background: '#F8FAFB',
+                        text: '#1A1A2E',
+                        cta: '#E31E24',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Clearzen Audition | Expertise Auditive Premium à Casablanca</title>
+</head>
+<body class="text-text bg-white antialiased selection:bg-accent/30">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-[100] bg-primary flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="relative mb-8">
+            <img src="LOGO CLEANZEN.png" alt="Clearzen Audition Logo" class="h-24 md:h-32 object-contain brightness-0 invert">
+        </div>
+        <p class="mt-2 text-white/60 font-medium text-sm uppercase tracking-[0.3em]">Excellence Auditive</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all py-6 bg-transparent" aria-label="Navigation principale">
+        <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center group cursor-pointer">
+                    <a href="#home" class="flex items-center">
+                        <img src="LOGO CLEANZEN.png" alt="Clearzen Audition Logo" class="h-12 md:h-14 object-contain brightness-0 invert group-hover:scale-105 transition-transform duration-300" id="nav-logo-img">
+                    </a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8 lg:space-x-10">
+                        <a href="#home" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Accueil</a>
+                        <a href="#mission" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Notre Mission</a>
+                        <a href="#services" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Services</a>
+                        <a href="#products" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Solutions</a>
+                        <a href="#engagements-valeurs" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Engagements</a>
+                        <a href="#team" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Équipe</a>
+                        <a href="#contact" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="mobile-menu-button" class="text-white hover:text-accent transition-colors p-2" aria-label="Ouvrir le menu">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden bg-primary">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/40 to-primary/90 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80" alt="Cabinet audioprothésiste moderne" class="w-full h-full object-cover scale-110 animate-slow-zoom">
+        </div>
+        
+        <div class="container mx-auto px-4 z-20 text-center">
+            <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md">
+                <span class="text-white text-xs font-bold uppercase tracking-[0.3em]">Expertise Auditive Premium</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-display font-bold text-white mb-8 leading-tight">
+                Redécouvrez le <br><span class="text-accent italic">plaisir d'entendre</span>
+            </h1>
+            <p class="text-xl text-white/80 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                Votre audition mérite l'excellence. Chez Clearzen, nous combinons technologie de pointe et accompagnement humain pour une expérience auditive sur mesure.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#contact" class="px-10 py-5 bg-accent text-white font-bold rounded-full hover:bg-white hover:text-primary transition-all duration-500 shadow-xl shadow-accent/20 group">
+                    Bilan Gratuit
+                    <i data-lucide="arrow-right" class="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#services" class="px-10 py-5 bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold rounded-full hover:bg-white/20 transition-all duration-500">
+                    Nos Solutions
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+            <a href="#mission" class="text-white/40 hover:text-white transition-colors">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const navLogoImg = document.getElementById('nav-logo-img');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-lg', 'py-4');
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navLogoImg.classList.remove('brightness-0', 'invert');
+                // Change links color
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('text-white/90');
+                    link.classList.add('text-primary');
+                });
+                document.getElementById('mobile-menu-button').classList.remove('text-white');
+                document.getElementById('mobile-menu-button').classList.add('text-primary');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-lg', 'py-4');
+                navbar.classList.add('bg-transparent', 'py-6');
+                navLogoImg.classList.add('brightness-0', 'invert');
+                // Reset links color
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.add('text-white/90');
+                    link.classList.remove('text-primary');
+                });
+                document.getElementById('mobile-menu-button').classList.add('text-white');
+                document.getElementById('mobile-menu-button').classList.remove('text-primary');
+            }
+        });
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 700);
+            }, 1000);
+        });
+    </script>
+</body>
