@@ -1,0 +1,16 @@
+{
+  "name": "clearzen-classic",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Clearzen Audition - Classic HTML/CSS/JS Version",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "mkdir -p dist && cp index.html style.css script.js dist/",
+    "preview": "npx serve dist",
+    "lint": "echo 'No linting needed for static version'"
+  },
+  "dependencies": {
+    "@google/genai": "^1.48.0",
+    "serve": "^14.2.4"
+  }
+}
