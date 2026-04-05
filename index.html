@@ -1604,63 +1604,7 @@
         </div>
     </div>
 
-   
-                    <div>
-                        <h4 class="font-bold text-sm">Assistant Clearzen</h4>
-                        <div class="flex items-center gap-1.5">
-                            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                            <span class="text-[10px] text-white/80">En ligne</span>
-                        </div>
-                    </div>
-                </div>
-                <button id="close-chat" class="hover:bg-white/10 p-1.5 rounded-lg transition-colors">
-                    <i data-lucide="x" size="20"></i>
-                </button>
-            </div>
-
-            <!-- Messages Area -->
-            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50">
-                <!-- Welcome Message -->
-                <div class="flex gap-2 max-w-[85%]">
-                    <div class="w-8 h-8 rounded-full bg-[#1B365D]/10 flex items-center justify-center flex-shrink-0">
-                        <i data-lucide="bot" size="16" class="text-[#1B365D]"></i>
-                    </div>
-                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100">
-                        <p class="text-sm text-gray-700 leading-relaxed">Bonjour ! Je suis l'assistant Clearzen. Comment puis-je vous aider aujourd'hui ?</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Input Area -->
-            <form id="chat-form" class="p-4 bg-white border-t border-gray-100 flex gap-2">
-                <input type="text" id="chat-input" placeholder="Posez votre question..." class="flex-1 bg-gray-100 border-none rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-[#1B365D]/20 transition-all outline-none" autocomplete="off">
-                <button type="submit" class="bg-[#1B365D] text-white p-2 rounded-xl hover:bg-[#1B365D]/90 transition-all shadow-lg shadow-[#1B365D]/20 active:scale-95">
-                    <i data-lucide="send" size="18"></i>
-                </button>
-            </form>
-        </div>
-    
-     <!-- Chat Toggle Button -->
-        <button id="chat-toggle" class="mt-4 w-14 h-14 bg-[#1B365D] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all pointer-events-auto group relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-tr from-[#1B365D] to-[#E31E24] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <i data-lucide="message-circle" id="chat-icon-open" class="relative z-10 transition-all duration-300"></i>
-            <i data-lucide="chevron-down" id="chat-icon-close" class="absolute z-10 opacity-0 scale-0 transition-all duration-300"></i>
-        </button>
-    </div>
-
-    <script type="importmap">
-    {
-        "imports": {
-            "@google/genai": "https://esm.run/@google/genai"
-        }
-    }
-    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="script.js"></script>
-</body>
-</html>
-
-
-      
 </body>
 </html>
