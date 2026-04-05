@@ -1,32 +1,11 @@
 :root {
     --accent: #E31E24;
     --primary: #1B365D;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --radius-sm: 0.5rem;
-    --radius-md: 1rem;
-    --radius-lg: 1.5rem;
-    --radius-xl: 2.5rem;
-    --transition-base: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
 }
-
-body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-main);
-    line-height: 1.6;
-}
-
-/* Advanced Typography with clamp() */
-h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
-h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h3 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
-p { font-size: clamp(1rem, 1.1vw, 1.125rem); }
 
 /* Custom Styles for CLEARZEN Classic Version */
 
@@ -98,22 +77,33 @@ p { font-size: clamp(1rem, 1.1vw, 1.125rem); }
 
 /* Navbar Base */
 #navbar {
-    transition: var(--transition-smooth);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, background-color, padding, box-shadow;
 }
 
 .nav-container {
-    transition: var(--transition-smooth);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Navbar Scrolled State (Shrink Effect) */
+.group.cursor-pointer {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#nav-logo-text-top, #nav-logo-line, #nav-logo-text-bottom, #nav-logo-bubble-blue {
+    transition: all 0.4s ease;
+}
+
+/* Navbar Scrolled State */
 .navbar-scrolled {
     @apply py-2;
 }
 
 .navbar-scrolled .nav-container {
-    @apply bg-white/95 backdrop-blur-2xl shadow-[0_20px_50px_-15px_rgba(27,54,93,0.15)] border border-slate-100 rounded-[3rem] px-8 py-2 mx-4 md:mx-auto max-w-6xl;
-    transform: scale(0.98);
+    @apply bg-white/90 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(27,54,93,0.2)] border border-white/60 rounded-[3rem] px-10 py-2 mx-4 md:mx-auto max-w-6xl;
 }
 
 .navbar-scrolled #nav-logo-text-top {
@@ -137,33 +127,11 @@ p { font-size: clamp(1rem, 1.1vw, 1.125rem); }
 }
 
 .navbar-scrolled .nav-link {
-    @apply text-primary/80 hover:text-accent;
+    @apply text-primary/70 hover:text-accent;
 }
 
 .navbar-scrolled #mobile-menu-btn {
     @apply text-primary bg-primary/5;
-}
-
-/* Micro-interactions */
-.hover-lift {
-    transition: var(--transition-base);
-}
-
-.hover-lift:hover {
-    transform: translateY(-5px);
-}
-
-.hover-glow:hover {
-    box-shadow: 0 0 20px rgba(227, 30, 36, 0.3);
-}
-
-/* Button Refinements */
-.btn-primary {
-    @apply bg-primary text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover:bg-primary/90 hover:shadow-xl active:scale-95;
-}
-
-.btn-accent {
-    @apply bg-accent text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover:bg-accent/90 hover:shadow-xl active:scale-95;
 }
 
 /* Active Nav Link */
@@ -198,7 +166,51 @@ p { font-size: clamp(1rem, 1.1vw, 1.125rem); }
     @apply opacity-100 translate-x-0;
 }
 
+/* Mobile Optimization & Touch Targets */
+@media (max-width: 768px) {
+    .navbar-scrolled .nav-container {
+        @apply px-4 py-2 mx-2 rounded-2xl;
+    }
+
+    #nav-logo-text-top { font-size: 14px !important; }
+    #nav-logo-text-bottom { font-size: 8px !important; }
+
+    button, 
+    a.btn,
+    .mobile-nav-link,
+    .mobile-taskbar-link {
+        min-height: 48px; /* Standard mobile touch target */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input, 
+    select, 
+    textarea {
+        font-size: 16px !important; /* Prevent iOS zoom on focus */
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    h1 { @apply text-3xl leading-tight !important; }
+    h2 { @apply text-2xl leading-tight !important; }
+    h3 { @apply text-xl leading-snug !important; }
+    
+    section {
+        @apply py-12 !important; /* Slightly reduced padding for mobile */
+    }
+
+    .hero-img {
+        object-position: 70% center; /* Better focus on mobile */
+    }
+}
+
 /* Mobile Taskbar Active State */
+.mobile-taskbar-link {
+    @apply transition-all duration-200 active:scale-90;
+}
+
 .mobile-taskbar-link.active-nav-link i {
     @apply text-accent scale-110;
 }
@@ -212,7 +224,7 @@ p { font-size: clamp(1rem, 1.1vw, 1.125rem); }
 }
 
 /* Safe area for modern devices */
-#mobile-taskbar, .pb-safe {
+#mobile-taskbar {
     padding-bottom: env(safe-area-inset-bottom, 0);
 }
 
@@ -404,6 +416,8 @@ button:hover i[data-lucide] svg {
 @media (max-width: 640px) {
     #chat-window {
         width: calc(100vw - 32px);
-        height: 60vh;
+        height: 75vh; /* More immersive on mobile */
+        bottom: 80px; /* Space for taskbar */
     }
 }
+
