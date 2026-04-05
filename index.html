@@ -171,30 +171,20 @@
     </div>
 
     <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all py-6 bg-transparent" aria-label="Navigation principale">
+    <nav id="navbar" class="fixed w-full z-50 transition-all py-3 md:py-6 bg-transparent" aria-label="Navigation principale">
         <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all">
             <div class="flex justify-between items-center">
-                <a href="#home" class="flex items-center space-x-3 group cursor-pointer hover:scale-105 transition-transform duration-500" aria-label="Clearzen Audition - Accueil">
-                    <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-3 group cursor-pointer shrink-0">
+                    <div class="flex items-center space-x-2 sm:space-x-3">
                         <div class="text-right">
-                            <div id="nav-logo-text-top" class="text-white font-sans font-bold text-lg tracking-wider leading-none transition-colors duration-300">CLEARZEN</div>
+                            <div id="nav-logo-text-top" class="text-white font-sans font-bold text-base sm:text-lg tracking-wider leading-none transition-colors duration-300">CLEARZEN</div>
                             <div id="nav-logo-line" class="h-[1.5px] bg-white w-full my-0.5 transition-colors duration-300"></div>
-                            <div id="nav-logo-text-bottom" class="text-white font-sans font-medium text-xs tracking-[0.2em] leading-none transition-colors duration-300">AUDITION</div>
+                            <div id="nav-logo-text-bottom" class="text-white font-sans font-medium text-[10px] sm:text-xs tracking-[0.2em] leading-none transition-colors duration-300">AUDITION</div>
                         </div>
-                        <div class="relative w-10 h-10">
-                              <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all py-6 bg-transparent" aria-label="Navigation principale">
-        <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center group cursor-pointer">
-                    <a href="#home" class="flex items-center">
-                        <img src="LOGO CLEANZEN.png" alt="Clearzen Audition Logo" class="h-12 md:h-14 object-contain brightness-0 invert group-hover:scale-105 transition-transform duration-300" id="nav-logo-img">
-                    </a>
-                </div>
-                
+                        <div class="relative w-8 h-8 sm:w-10 sm:h-10 shrink-0">
                             <!-- Blue Bubble -->
-                            <div id="nav-logo-bubble-blue" class="absolute top-0 left-0 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-colors duration-300 group-hover:bg-accent">
-                                <svg viewBox="0 0 24 24" class="w-5 h-5 text-primary group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <div id="nav-logo-bubble-blue" class="absolute top-0 left-0 w-6 h-6 sm:w-8 sm:h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-colors duration-300">
+                                <svg viewBox="0 0 24 24" class="w-4 h-4 sm:w-5 sm:h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M6 13a6 6 0 0 1 6-6 6 6 0 0 1 6 6"></path>
                                     <path d="M12 7V3"></path>
                                     <path d="M5 13a7 7 0 0 0 14 0"></path>
@@ -202,7 +192,7 @@
                                 </svg>
                             </div>
                             <!-- Red Bubble -->
-                            <div class="absolute bottom-0 right-0 w-5 h-5 bg-accent rounded-full flex items-center justify-center border border-primary shadow-sm">
+                            <div class="absolute bottom-0 right-0 w-4 h-4 sm:w-5 sm:h-5 bg-accent rounded-full flex items-center justify-center border border-primary shadow-sm">
                                 <div class="flex space-x-0.5">
                                     <div class="w-0.5 h-0.5 bg-white rounded-full"></div>
                                     <div class="w-0.5 h-0.5 bg-white rounded-full"></div>
@@ -211,30 +201,37 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
                 
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8 lg:space-x-10">
-                        <a href="#home" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group" data-i18n="nav_home">Accueil</a>
-                        <a href="#mission" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group" data-i18n="nav_mission">Notre Mission</a>
-                        <a href="#services" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group" data-i18n="nav_services">Services</a>
-                        <a href="#products" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group" data-i18n="nav_solutions">Solutions</a>
-                        <a href="#engagements-valeurs" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group" data-i18n="nav_engagements">Engagements</a>
-                        <a href="#team" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group" data-i18n="nav_team">Équipe</a>
-                        <a href="#contact" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group" data-i18n="nav_contact">Contact</a>
-                        
-                        <div class="flex items-center space-x-2 bg-white/10 p-1 rounded-full border border-white/10">
-                            <button onclick="setLanguage('fr')" class="lang-btn-fr px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-white/10 text-white" aria-label="Passer en Français">FR</button>
-                            <button onclick="setLanguage('en')" class="lang-btn-en px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-white/10 text-white/50" aria-label="Switch to English">EN</button>
+                        <a href="#home" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Accueil</a>
+                        <a href="#mission" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Notre Mission</a>
+                        <a href="#services" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Services</a>
+                        <a href="#products" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Solutions</a>
+                        <a href="#engagements-valeurs" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Engagements</a>
+                        <a href="#team" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Équipe</a>
+                        <a href="#contact" class="nav-link text-xs font-bold uppercase tracking-widest text-white/90 hover:text-accent transition-all relative group">Contact</a>
+                        <div class="flex items-center space-x-4 border-l border-white/10 pl-8 ml-2">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-white/30 mr-2">Suivez-nous :</span>
+                            <a href="https://facebook.com/clearzen.audition" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-accent transition-colors" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="https://instagram.com/clearzen.audition" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-accent transition-colors" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://wa.me/212623861793" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-7.6 8.38 8.38 0 0 1 3.8.9L21 3.5Z"></path></svg>
+                            </a>
                         </div>
-                        <button onclick="openTestModal()" class="bg-cta text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-cta/20 hover-glow" data-i18n="nav_appointment" aria-label="Prendre rendez-vous">
+                        <a href="tel:+212520144262" class="bg-cta text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-cta/20">
                             Prendre RDV
-                        </button>
+                        </a>
                     </div>
                 </div>
 
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="p-2 rounded-xl text-white bg-white/10 transition-colors hover:bg-white/20" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <button id="mobile-menu-btn" class="p-3 rounded-xl text-white bg-white/10 transition-colors active:scale-90" aria-label="Ouvrir le menu" aria-expanded="false">
                         <i data-lucide="menu" size="24"></i>
                     </button>
                 </div>
@@ -281,63 +278,74 @@
             </button>
         </div>
         <div class="flex-1 overflow-y-auto py-8 px-8 space-y-4">
-            <a href="#home" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2" data-i18n="nav_home">
+            <a href="#home" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2">
                 <span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 opacity-0 group-[.active-nav-link]:opacity-100 transition-all"></span>
                 Accueil
             </a>
-            <a href="#mission" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2" data-i18n="nav_mission">
+            <a href="#mission" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2">
                 <span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 opacity-0 group-[.active-nav-link]:opacity-100 transition-all"></span>
                 Notre Mission
             </a>
-            <a href="#services" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2" data-i18n="nav_services">
+            <a href="#services" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2">
                 <span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 opacity-0 group-[.active-nav-link]:opacity-100 transition-all"></span>
                 Services
             </a>
-            <a href="#products" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2" data-i18n="nav_solutions">
+            <a href="#products" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2">
                 <span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 opacity-0 group-[.active-nav-link]:opacity-100 transition-all"></span>
                 Solutions
             </a>
-            <a href="#engagements-valeurs" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2" data-i18n="nav_engagements">
+            <a href="#engagements-valeurs" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2">
                 <span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 opacity-0 group-[.active-nav-link]:opacity-100 transition-all"></span>
                 Engagements
             </a>
-            <a href="#team" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2" data-i18n="nav_team">
+            <a href="#team" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2">
                 <span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 opacity-0 group-[.active-nav-link]:opacity-100 transition-all"></span>
                 Équipe
             </a>
-            <a href="#contact" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2" data-i18n="nav_contact">
+            <a href="#contact" class="mobile-nav-link text-2xl font-display font-bold text-primary hover:text-accent transition-all flex items-center group py-2">
                 <span class="w-1.5 h-1.5 bg-accent rounded-full mr-4 opacity-0 group-[.active-nav-link]:opacity-100 transition-all"></span>
                 Contact
             </a>
             
             <div class="pt-8 space-y-4">
-                <button onclick="openTestModal()" class="w-full bg-accent text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-accent/90 transition-all shadow-xl shadow-accent/20 flex items-center justify-center group" data-i18n="hero_cta_test">
+                <button onclick="openTestModal()" class="w-full bg-accent text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-accent/90 transition-all shadow-xl shadow-accent/20 flex items-center justify-center group">
                     Bilan Auditif Gratuit
                     <i data-lucide="chevron-right" class="ml-2 group-hover:translate-x-2 transition-transform"></i>
                 </button>
-                <a href="tel:+212520144262" class="w-full bg-primary text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all flex items-center justify-center" data-i18n="nav_call">
+                <a href="tel:+212520144262" class="w-full bg-primary text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all flex items-center justify-center">
                     <i data-lucide="phone" size="18" class="mr-3"></i>
                     Appeler
                 </a>
             </div>
         </div>
-        <div class="p-8 border-t border-slate-100 space-y-6">
-            <div class="flex items-center justify-center space-x-4">
-                <button onclick="setLanguage('fr')" class="lang-btn-fr-mobile px-6 py-3 rounded-2xl bg-slate-100 text-primary font-bold text-sm transition-all">Français</button>
-                <button onclick="setLanguage('en')" class="lang-btn-en-mobile px-6 py-3 rounded-2xl bg-slate-100 text-primary/40 font-bold text-sm transition-all">English</button>
+        <div class="p-8 border-t border-slate-100 bg-slate-50/50">
+            <p class="text-primary/40 text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-center">Suivez-nous</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://facebook.com/clearzen.audition" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm hover:bg-accent hover:text-white transition-all" aria-label="Facebook">
+                    <i data-lucide="facebook" size="20"></i>
+                </a>
+                <a href="https://instagram.com/clearzen.audition" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm hover:bg-accent hover:text-white transition-all" aria-label="Instagram">
+                    <i data-lucide="instagram" size="20"></i>
+                </a>
+                <a href="https://wa.me/212623861793" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm hover:bg-[#25D366] hover:text-white transition-all" aria-label="WhatsApp">
+                    <i data-lucide="message-circle" size="20"></i>
+                </a>
+                <a href="https://linkedin.com/company/clearzen-audition" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm hover:bg-accent hover:text-white transition-all" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" size="20"></i>
+                </a>
             </div>
-            <a href="tel:+212520144262" class="w-full bg-cta text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest flex items-center justify-center shadow-xl shadow-cta/20" data-i18n="nav_appointment">
-                <i data-lucide="phone" size="18" class="mr-3"></i>
-                Prendre RDV
-            </a>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center overflow-hidden bg-primary" role="banner">
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-primary pt-20 md:pt-0">
         <div id="hero-slider" class="absolute inset-0 z-0">
             <img id="hero-image" 
-                 src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1920" 
+                 src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1200" 
+                 srcset="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800 800w,
+                         https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1200 1200w,
+                         https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1920 1920w"
+                 sizes="100vw"
                  class="hero-img absolute inset-0 w-full h-full object-cover opacity-40 transition-opacity duration-1000" 
                  alt="Cabinet d'audioprothèse Clearzen Audition Casablanca"
                  fetchpriority="high"
@@ -347,33 +355,33 @@
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/40 to-primary/90 z-[1]"></div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-12 md:mt-0">
             <div class="max-w-3xl">
                 <div class="inline-flex items-center space-x-3 bg-accent/10 backdrop-blur-md border border-accent/20 px-5 py-2.5 rounded-full mb-8">
                     <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                    <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]" data-i18n="hero_badge">Expertise Auditive Premium à Casablanca</span>
+                    <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]">Expertise Auditive Premium à Casablanca</span>
                 </div>
-                <h1 class="text-4xl sm:text-6xl md:text-8xl font-display font-bold text-white leading-[1.1] mb-8" data-i18n="hero_title">
+                <h1 class="text-4xl sm:text-6xl md:text-8xl font-display font-bold text-white leading-[1.1] mb-8">
                     Votre audition, <br><span class="text-accent italic">notre priorité.</span>
                 </h1>
-                <p class="text-lg sm:text-xl text-white/70 mb-12 leading-relaxed max-w-xl font-medium" data-i18n="hero_subtitle">
+                <p class="text-lg sm:text-xl text-white/70 mb-12 leading-relaxed max-w-xl font-medium">
                     Clearzen Audition vous accompagne vers une meilleure qualité de vie avec une prise en charge complète, précise et profondément humaine.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6">
-                    <button onclick="openTestModal()" class="btn-3d animate-float-3d flex items-center justify-center group hover-glow" data-i18n="hero_cta_test" aria-label="Commencer le bilan auditif gratuit">
+                    <button onclick="openTestModal()" class="btn-3d animate-float-3d flex items-center justify-center group">
                         Bilan Auditif Gratuit
                         <i data-lucide="activity" class="ml-2 group-hover:animate-pulse transition-transform"></i>
                     </button>
-                    <a href="#contact" class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg transition-all flex items-center justify-center hover-lift" data-i18n="nav_appointment" aria-label="Prendre rendez-vous">
+                    <a href="#contact" class="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg transition-all flex items-center justify-center">
                         Prendre RDV
                     </a>
                 </div>
                 
                 <div class="mt-16 flex items-center space-x-8">
                     <div class="flex -space-x-3">
-                        <img src="https://i.pravatar.cc/100?u=1" alt="Patient satisfait 1" class="w-12 h-12 rounded-full border-4 border-primary object-cover" loading="lazy" decoding="async">
-                        <img src="https://i.pravatar.cc/100?u=2" alt="Patient satisfait 2" class="w-12 h-12 rounded-full border-4 border-primary object-cover" loading="lazy" decoding="async">
-                        <img src="https://i.pravatar.cc/100?u=3" alt="Patient satisfait 3" class="w-12 h-12 rounded-full border-4 border-primary object-cover" loading="lazy" decoding="async">
+                        <img src="https://i.pravatar.cc/100?u=1" alt="Patient satisfait" class="w-12 h-12 rounded-full border-4 border-primary object-cover" loading="lazy" decoding="async">
+                        <img src="https://i.pravatar.cc/100?u=2" alt="Patient satisfait" class="w-12 h-12 rounded-full border-4 border-primary object-cover" loading="lazy" decoding="async">
+                        <img src="https://i.pravatar.cc/100?u=3" alt="Patient satisfait" class="w-12 h-12 rounded-full border-4 border-primary object-cover" loading="lazy" decoding="async">
                     </div>
                     <div>
                         <div class="flex text-accent mb-1">
@@ -383,7 +391,7 @@
                             <i data-lucide="star" class="fill-accent" size="16"></i>
                             <i data-lucide="star" class="fill-accent" size="16"></i>
                         </div>
-                        <p class="text-white/60 text-sm font-bold uppercase tracking-widest" data-i18n="hero_stats">93% de satisfaction patient</p>
+                        <p class="text-white/60 text-sm font-bold uppercase tracking-widest">93% de satisfaction patient</p>
                     </div>
                 </div>
             </div>
@@ -407,9 +415,9 @@
                                     </svg>
                                 </div>
                             </div>
-                            <h2 class="text-sm font-bold uppercase tracking-[0.5em] text-accent" data-i18n="mission_badge">Notre Mission</h2>
+                            <h2 class="text-sm font-bold uppercase tracking-[0.5em] text-accent">Notre Mission</h2>
                         </div>
-                        <h3 class="text-5xl sm:text-7xl font-display font-bold text-primary mb-10 leading-[1.1]" data-i18n="mission_title">
+                        <h3 class="text-5xl sm:text-7xl font-display font-bold text-primary mb-10 leading-[1.1]">
                             Une prise en charge <span class="text-accent italic">complète et humaine.</span>
                         </h3>
                     </div>
@@ -417,12 +425,12 @@
                     <!-- Vision & Mission -->
                     <div class="space-y-8">
                         <div class="pl-6 border-l-4 border-accent bg-accent/5 py-6 rounded-r-2xl shadow-sm">
-                            <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-3" data-i18n="mission_vision_label">Notre Vision</h4>
-                            <p class="text-primary text-xl leading-relaxed italic font-bold" data-i18n="mission_vision_text">
+                            <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-accent mb-3">Notre Vision</h4>
+                            <p class="text-primary text-xl leading-relaxed italic font-bold">
                                 "Devenir la référence de l'audioprothèse de proximité au Maroc, en alliant innovation technologique et excellence relationnelle pour que chaque patient retrouve le plaisir d'entendre."
                             </p>
                         </div>
-                        <p class="text-text/90 text-xl leading-relaxed font-bold" data-i18n="mission_description">
+                        <p class="text-text/90 text-xl leading-relaxed font-bold">
                             La mission de Clearzen Audition est d’accompagner chaque patient vers une meilleure qualité de vie en lui offrant une prise en charge auditive complète, précise et profondément humaine. Nous nous engageons à transformer votre quotidien sonore grâce à une expertise médicale de pointe et un accompagnement bienveillant à chaque étape de votre parcours.
                         </p>
                     </div>
@@ -454,11 +462,11 @@
                                 <img src="https://i.pravatar.cc/100?u=13" class="w-12 h-12 rounded-full border-4 border-white shadow-sm" alt="Patient satisfait" loading="lazy" decoding="async">
                             </div>
                             <div class="flex flex-col">
-                                <span class="text-xs font-bold text-accent uppercase tracking-widest" data-i18n="mission_trust_label">Confiance</span>
-                                <span class="text-sm font-bold text-primary" data-i18n="mission_trust_count">+500 Patients</span>
+                                <span class="text-xs font-bold text-accent uppercase tracking-widest">Confiance</span>
+                                <span class="text-sm font-bold text-primary">+500 Patients</span>
                             </div>
                         </div>
-                        <p class="text-primary font-display font-bold italic text-lg" data-i18n="mission_trust_quote">"Une renaissance auditive."</p>
+                        <p class="text-primary font-display font-bold italic text-lg">"Une renaissance auditive."</p>
                     </div>
                 </div>
             </div>
@@ -495,57 +503,57 @@
                                     </svg>
                                 </div>
                             </div>
-                            <h2 class="text-accent font-bold uppercase tracking-[0.4em] text-xs" data-i18n="engagements_badge">Engagement Qualité</h2>
+                            <h2 class="text-accent font-bold uppercase tracking-[0.4em] text-xs">Engagement Qualité</h2>
                         </div>
-                        <h3 class="text-4xl font-display font-bold text-white leading-tight" data-i18n="engagements_title">Nos <span class="text-accent italic">Engagements</span></h3>
+                        <h3 class="text-4xl font-display font-bold text-white leading-tight">Nos <span class="text-accent italic">Engagements</span></h3>
                     </div>
                     <div class="space-y-4">
-                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20 hover-lift">
+                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                                     <i data-lucide="check-circle-2" size="24"></i>
                                 </div>
-                                <p class="text-white text-lg font-bold" data-i18n="engagement_1">Évaluation rigoureuse (tests complets, outils avancés).</p>
+                                <p class="text-white text-lg font-bold">Évaluation rigoureuse (tests complets, outils avancés).</p>
                             </div>
                         </div>
-                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20 hover-lift">
+                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                                     <i data-lucide="check-circle-2" size="24"></i>
                                 </div>
-                                <p class="text-white text-lg font-bold" data-i18n="engagement_2">Solutions sur mesure adaptées à votre style de vie.</p>
+                                <p class="text-white text-lg font-bold">Solutions sur mesure adaptées à votre style de vie.</p>
                             </div>
                         </div>
-                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20 hover-lift">
+                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                                     <i data-lucide="check-circle-2" size="24"></i>
                                 </div>
-                                <p class="text-white text-lg font-bold" data-i18n="engagement_3">Accompagnement continu et réglages illimités.</p>
+                                <p class="text-white text-lg font-bold">Accompagnement continu et réglages illimités.</p>
                             </div>
                         </div>
-                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20 hover-lift">
+                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                                     <i data-lucide="check-circle-2" size="24"></i>
                                 </div>
-                                <p class="text-white text-lg font-bold" data-i18n="engagement_4">Pédagogie et transparence à chaque étape.</p>
+                                <p class="text-white text-lg font-bold">Pédagogie et transparence à chaque étape.</p>
                             </div>
                         </div>
-                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20 hover-lift">
+                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                                     <i data-lucide="check-circle-2" size="24"></i>
                                 </div>
-                                <p class="text-white text-lg font-bold" data-i18n="engagement_5">Expérience rassurante et bienveillante.</p>
+                                <p class="text-white text-lg font-bold">Expérience rassurante et bienveillante.</p>
                             </div>
                         </div>
-                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20 hover-lift">
+                        <div class="group bg-white/10 backdrop-blur-md p-6 rounded-2xl border-2 border-white/20 hover:bg-accent/10 hover:border-accent/50 transition-all duration-500 shadow-xl shadow-black/20">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
                                     <i data-lucide="check-circle-2" size="24"></i>
                                 </div>
-                                <p class="text-white text-lg font-bold" data-i18n="engagement_6">Facilités de paiement pour tous les budgets.</p>
+                                <p class="text-white text-lg font-bold">Facilités de paiement pour tous les budgets.</p>
                             </div>
                         </div>
                     </div>
@@ -563,66 +571,66 @@
                                     </svg>
                                 </div>
                             </div>
-                            <h2 class="text-accent font-bold uppercase tracking-[0.4em] text-xs" data-i18n="valeurs_badge">L'Esprit Clearzen</h2>
+                            <h2 class="text-accent font-bold uppercase tracking-[0.4em] text-xs">L'Esprit Clearzen</h2>
                         </div>
-                        <h3 class="text-4xl font-display font-bold text-white leading-tight" data-i18n="valeurs_title">Nos Valeurs <span class="text-accent italic">Fondamentales</span></h3>
+                        <h3 class="text-4xl font-display font-bold text-white leading-tight">Nos Valeurs <span class="text-accent italic">Fondamentales</span></h3>
                     </div>
                     <div class="grid sm:grid-cols-2 gap-6">
-                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group hover-lift">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group">
                             <div class="w-14 h-14 bg-accent/30 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                 <i data-lucide="award" size="28"></i>
                             </div>
-                            <h4 class="text-white font-display font-bold text-2xl mb-3" data-i18n="valeur_1_title">Expertise</h4>
-                            <p class="text-white/80 text-base leading-relaxed font-bold" data-i18n="valeur_1_text">Excellence audiologique et méthodes internationales.</p>
+                            <h4 class="text-white font-display font-bold text-2xl mb-3">Expertise</h4>
+                            <p class="text-white/80 text-base leading-relaxed font-bold">Excellence audiologique et méthodes internationales.</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group hover-lift">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group">
                             <div class="w-14 h-14 bg-accent/30 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                 <i data-lucide="heart" size="28"></i>
                             </div>
-                            <h4 class="text-white font-display font-bold text-2xl mb-3" data-i18n="valeur_2_title">Humanité</h4>
-                            <p class="text-white/80 text-base leading-relaxed font-bold" data-i18n="valeur_2_text">Écoute, douceur, empathie et respect.</p>
+                            <h4 class="text-white font-display font-bold text-2xl mb-3">Humanité</h4>
+                            <p class="text-white/80 text-base leading-relaxed font-bold">Écoute, douceur, empathie et respect.</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group hover-lift">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group">
                             <div class="w-14 h-14 bg-accent/30 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                 <i data-lucide="shield-check" size="28"></i>
                             </div>
-                            <h4 class="text-white font-display font-bold text-2xl mb-3" data-i18n="valeur_3_title">Transparence</h4>
-                            <p class="text-white/80 text-base leading-relaxed font-bold" data-i18n="valeur_3_text">Clarté totale sur les choix et les solutions.</p>
+                            <h4 class="text-white font-display font-bold text-2xl mb-3">Transparence</h4>
+                            <p class="text-white/80 text-base leading-relaxed font-bold">Clarté totale sur les choix et les solutions.</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group hover-lift">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group">
                             <div class="w-14 h-14 bg-accent/30 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                 <i data-lucide="sparkles" size="28"></i>
                             </div>
-                            <h4 class="text-white font-display font-bold text-2xl mb-3" data-i18n="valeur_4_title">Modernité</h4>
-                            <p class="text-white/80 text-base leading-relaxed font-bold" data-i18n="valeur_4_text">Appareils discrets, rechargeables et connectés.</p>
+                            <h4 class="text-white font-display font-bold text-2xl mb-3">Modernité</h4>
+                            <p class="text-white/80 text-base leading-relaxed font-bold">Appareils discrets, rechargeables et connectés.</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group hover-lift">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group">
                             <div class="w-14 h-14 bg-accent/30 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                 <i data-lucide="handshake" size="28"></i>
                             </div>
-                            <h4 class="text-white font-display font-bold text-2xl mb-3" data-i18n="valeur_5_title">Confiance</h4>
-                            <p class="text-white/80 text-base leading-relaxed font-bold" data-i18n="valeur_5_text">Sincérité et professionnalisme sur le long terme.</p>
+                            <h4 class="text-white font-display font-bold text-2xl mb-3">Confiance</h4>
+                            <p class="text-white/80 text-base leading-relaxed font-bold">Sincérité et professionnalisme sur le long terme.</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group hover-lift">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group">
                             <div class="w-14 h-14 bg-accent/30 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                 <i data-lucide="accessibility" size="28"></i>
                             </div>
-                            <h4 class="text-white font-display font-bold text-2xl mb-3" data-i18n="valeur_3_title">Accessibilité</h4>
-                            <p class="text-white/80 text-base leading-relaxed font-bold" data-i18n="valeur_3_text">Santé auditive simplifiée et rassurante.</p>
+                            <h4 class="text-white font-display font-bold text-2xl mb-3">Accessibilité</h4>
+                            <p class="text-white/80 text-base leading-relaxed font-bold">Santé auditive simplifiée et rassurante.</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group hover-lift">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group">
                             <div class="w-14 h-14 bg-accent/30 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                 <i data-lucide="smile" size="28"></i>
                             </div>
-                            <h4 class="text-white font-display font-bold text-2xl mb-3" data-i18n="valeur_7_title">Bien-être</h4>
-                            <p class="text-white/80 text-base leading-relaxed font-bold" data-i18n="valeur_7_text">Améliorer le confort quotidien et la confiance en soi.</p>
+                            <h4 class="text-white font-display font-bold text-2xl mb-3">Bien-être</h4>
+                            <p class="text-white/80 text-base leading-relaxed font-bold">Améliorer le confort quotidien et la confiance en soi.</p>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group sm:col-span-2 lg:col-span-1 hover-lift">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border-2 border-white/20 hover:border-accent/60 hover:bg-accent/5 transition-all duration-500 shadow-2xl group sm:col-span-2 lg:col-span-1">
                             <div class="w-14 h-14 bg-accent/30 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
                                 <i data-lucide="users" size="28"></i>
                             </div>
-                            <h4 class="text-white font-display font-bold text-2xl mb-3" data-i18n="valeur_8_title">Proximité</h4>
-                            <p class="text-white/80 text-base leading-relaxed font-bold" data-i18n="valeur_8_text">Un accompagnement local et personnalisé.</p>
+                            <h4 class="text-white font-display font-bold text-2xl mb-3">Proximité</h4>
+                            <p class="text-white/80 text-base leading-relaxed font-bold">Un accompagnement local et personnalisé.</p>
                         </div>
                     </div>
                 </div>
@@ -636,8 +644,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div class="order-2 lg:order-1">
-                    <div class="aspect-video rounded-[3rem] overflow-hidden shadow-2xl hover-lift">
-                        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=1000" alt="Santé auditive et bien-être" class="w-full h-full object-cover" loading="lazy">
+                    <div class="aspect-video rounded-[3rem] overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=1000" alt="Hearing Health" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="order-1 lg:order-2">
@@ -650,10 +658,10 @@
                                 </svg>
                             </div>
                         </div>
-                        <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent" data-i18n="education_badge">Comprendre l'audition</h2>
+                        <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent">Comprendre l'audition</h2>
                     </div>
-                    <h3 class="text-4xl font-display font-bold text-primary mb-8 leading-tight" data-i18n="education_title">Pourquoi est-il crucial d'agir tôt ?</h3>
-                    <p class="text-text/60 text-lg mb-8 leading-relaxed font-medium" data-i18n="education_description">
+                    <h3 class="text-4xl font-display font-bold text-primary mb-8 leading-tight">Pourquoi est-il crucial d'agir tôt ?</h3>
+                    <p class="text-text/60 text-lg mb-8 leading-relaxed font-medium">
                         Une perte auditive non traitée peut entraîner un isolement social, une fatigue cognitive et un déclin prématuré des fonctions cérébrales. Agir dès les premiers signes, c'est préserver votre capital santé.
                     </p>
                     <div class="space-y-6">
@@ -662,8 +670,8 @@
                                 <i data-lucide="brain" size="18"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-primary" data-i18n="education_point_1_title">Prévention Cognitive</h4>
-                                <p class="text-text/50 text-sm" data-i18n="education_point_1_text">Stimuler le cerveau pour maintenir les connexions neuronales liées au langage.</p>
+                                <h4 class="font-bold text-primary">Prévention Cognitive</h4>
+                                <p class="text-text/50 text-sm">Stimuler le cerveau pour maintenir les connexions neuronales liées au langage.</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
@@ -671,8 +679,8 @@
                                 <i data-lucide="users" size="18"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-primary" data-i18n="education_point_2_title">Vie Sociale Épanouie</h4>
-                                <p class="text-text/50 text-sm" data-i18n="education_point_2_text">Participer pleinement aux conversations sans effort ni frustration.</p>
+                                <h4 class="font-bold text-primary">Vie Sociale Épanouie</h4>
+                                <p class="text-text/50 text-sm">Participer pleinement aux conversations sans effort ni frustration.</p>
                             </div>
                         </div>
                     </div>
@@ -685,7 +693,7 @@
     <section id="services" class="py-16 md:py-32 relative overflow-hidden">
         <!-- Background Image with Sophisticated Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000" alt="Technologie auditive Clearzen" class="w-full h-full object-cover opacity-50" referrerPolicy="no-referrer" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=2000" alt="Hearing Technology Background" class="w-full h-full object-cover opacity-50" referrerPolicy="no-referrer">
             <div class="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/80 to-accent/20 backdrop-blur-[2px]"></div>
             <!-- Subtle Tech Pattern Overlay -->
             <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
@@ -702,92 +710,92 @@
                             </svg>
                         </div>
                     </div>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent" data-i18n="services_badge">Nos Services</h2>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent">Nos Services</h2>
                 </div>
-                <h3 class="text-4xl sm:text-5xl font-display font-bold text-white mb-8" data-i18n="services_title">Un accompagnement complet pour votre santé auditive.</h3>
-                <p class="text-white/70 text-lg font-medium" data-i18n="services_subtitle">De l'évaluation initiale au suivi à long terme, nous maîtrisons chaque étape</p>
+                <h3 class="text-4xl sm:text-5xl font-display font-bold text-white mb-8">Un accompagnement complet pour votre santé auditive.</h3>
+                <p class="text-white/70 text-lg font-medium">De l'évaluation initiale au suivi à long terme, nous maîtrisons chaque étape</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group hover-lift">
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
                     <div class="w-16 h-16 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
                         <i data-lucide="activity" size="32" class="group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors" data-i18n="service_1_title">Bilan Auditif Complet (Gratuit)</h4>
-                    <p class="text-text/60 text-sm leading-relaxed mb-6 font-medium" data-i18n="service_1_text">
+                    <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors">Bilan Auditif Complet (Gratuit)</h4>
+                    <p class="text-text/60 text-sm leading-relaxed mb-6 font-medium">
                         Audiométrie tonale et vocale, analyse de la compréhension en milieu bruyant. Gratuit et sans engagement.
                     </p>
                     <ul class="text-xs font-bold text-primary/40 space-y-2 uppercase tracking-widest">
-                        <li data-i18n="service_1_tag_1">• Test & Mesure</li>
-                        <li data-i18n="service_1_tag_2">• Diagnostic Précis</li>
-                        <li data-i18n="service_1_tag_3">• Sans engagement</li>
+                        <li>• Test & Mesure</li>
+                        <li>• Diagnostic Précis</li>
+                        <li>• Sans engagement</li>
                     </ul>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group hover-lift">
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
                     <div class="w-16 h-16 bg-accent/5 text-accent rounded-2xl flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all">
                         <i data-lucide="headphones" size="32" class="group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors" data-i18n="service_2_title">Appareillage sur mesure</h4>
-                    <p class="text-text/60 text-sm leading-relaxed mb-6 font-medium" data-i18n="service_2_text">
+                    <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors">Appareillage sur mesure</h4>
+                    <p class="text-text/60 text-sm leading-relaxed mb-6 font-medium">
                         Choix de la solution la plus adaptée à votre morphologie et à votre style de vie parmi les meilleures marques.
                     </p>
                     <ul class="text-xs font-bold text-primary/40 space-y-2 uppercase tracking-widest">
-                        <li data-i18n="service_2_tag_1">• Solutions RIC/BTE/ITE</li>
-                        <li data-i18n="service_2_tag_2">• Technologie de pointe</li>
-                        <li data-i18n="service_2_tag_3">• Confort optimal</li>
+                        <li>• Solutions RIC/BTE/ITE</li>
+                        <li>• Technologie de pointe</li>
+                        <li>• Confort optimal</li>
                     </ul>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group hover-lift">
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
                     <div class="w-16 h-16 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
                         <i data-lucide="settings-2" size="32" class="group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors" data-i18n="service_3_title">Réglages Experts</h4>
-                    <p class="text-text/60 text-sm leading-relaxed mb-6 font-medium" data-i18n="service_3_text">
+                    <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors">Réglages Experts</h4>
+                    <p class="text-text/60 text-sm leading-relaxed mb-6 font-medium">
                         Ajustements précis et personnalisés pour une adaptation parfaite et un confort d'écoute immédiat.
                     </p>
                     <ul class="text-xs font-bold text-primary/40 space-y-2 uppercase tracking-widest">
-                        <li data-i18n="service_3_tag_1">• Fine-tuning</li>
-                        <li data-i18n="service_3_tag_2">• Gain par fréquence</li>
-                        <li data-i18n="service_3_tag_3">• Directionnalité</li>
+                        <li>• Fine-tuning</li>
+                        <li>• Gain par fréquence</li>
+                        <li>• Directionnalité</li>
                     </ul>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group hover-lift">
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
                     <div class="w-16 h-16 bg-accent/5 text-accent rounded-2xl flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all">
                         <i data-lucide="wrench" size="32" class="group-hover:scale-110 transition-transform duration-300"></i>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors" data-i18n="service_4_title">Suivi & Maintenance</h4>
-                    <p class="text-text/60 text-sm leading-relaxed mb-6 font-medium" data-i18n="service_4_text">
+                    <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors">Suivi & Maintenance</h4>
+                    <p class="text-text/60 text-sm leading-relaxed mb-6 font-medium">
                         Service après-vente réactif, entretien régulier et réparations pour garantir la longévité de vos appareils.
                     </p>
                     <ul class="text-xs font-bold text-primary/40 space-y-2 uppercase tracking-widest">
-                        <li data-i18n="service_4_tag_1">• SAV Réactif</li>
-                        <li data-i18n="service_4_tag_2">• Nettoyage</li>
-                        <li data-i18n="service_4_tag_3">• Garantie 4 ans</li>
+                        <li>• SAV Réactif</li>
+                        <li>• Nettoyage</li>
+                        <li>• Garantie 4 ans</li>
                     </ul>
                 </div>
 
                 <!-- Service 5 -->
-                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group lg:col-span-2 hover-lift">
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all group lg:col-span-2">
                     <div class="flex flex-col md:flex-row md:items-center gap-8">
                         <div class="w-16 h-16 bg-primary/5 text-primary rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
                             <i data-lucide="shield-check" size="32" class="group-hover:scale-110 transition-transform duration-300"></i>
                         </div>
                         <div>
-                            <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors" data-i18n="service_5_title">Conseils & Prévention</h4>
-                            <p class="text-text/60 text-sm leading-relaxed mb-4 font-medium" data-i18n="service_5_text">
+                            <h4 class="text-2xl font-display font-bold text-primary mb-4 group-hover:text-blue-500 transition-colors">Conseils & Prévention</h4>
+                            <p class="text-text/60 text-sm leading-relaxed mb-4 font-medium">
                                 Sensibilisation à l'importance de l'audition et conseils personnalisés pour protéger votre capital auditif au quotidien.
                             </p>
                             <ul class="text-xs font-bold text-primary/40 flex flex-wrap gap-4 uppercase tracking-widest">
-                                <li data-i18n="service_5_tag_1">• Protection auditive</li>
-                                <li data-i18n="service_5_tag_2">• Hygiène</li>
-                                <li data-i18n="service_5_tag_3">• Éducation</li>
+                                <li>• Protection auditive</li>
+                                <li>• Hygiène</li>
+                                <li>• Éducation</li>
                             </ul>
                         </div>
                     </div>
@@ -804,19 +812,19 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
                 <div>
                     <div class="text-5xl font-display font-bold text-accent mb-4">93%</div>
-                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest" data-i18n="stats_1">Amélioration de la compréhension</p>
+                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest">Amélioration de la compréhension</p>
                 </div>
                 <div>
                     <div class="text-5xl font-display font-bold text-accent mb-4">100%</div>
-                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest" data-i18n="stats_2">Suivi personnalisé & illimité</p>
+                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest">Suivi personnalisé & illimité</p>
                 </div>
                 <div>
                     <div class="text-5xl font-display font-bold text-accent mb-4">0</div>
-                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest" data-i18n="stats_3">Pression commerciale</p>
+                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest">Pression commerciale</p>
                 </div>
                 <div>
                     <div class="text-5xl font-display font-bold text-accent mb-4">2026</div>
-                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest" data-i18n="stats_4">Ouvertures : Marrakech, Agadir, Rabat...</p>
+                    <p class="text-white/60 text-sm font-bold uppercase tracking-widest">Ouvertures : Marrakech, Agadir, Rabat...</p>
                 </div>
             </div>
         </div>
@@ -837,7 +845,7 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16 relative z-10">
             <div class="inline-flex flex-col items-center">
-                <h2 class="text-primary font-display font-bold text-3xl md:text-4xl mb-4" data-i18n="brands_title">Partenaires Technologiques Mondiaux</h2>
+                <h2 class="text-primary font-display font-bold text-3xl md:text-4xl mb-4">Partenaires Technologiques Mondiaux</h2>
                 <div class="h-1.5 w-24 bg-accent rounded-full"></div>
             </div>
         </div>
@@ -864,7 +872,7 @@
         </div>
 
         <div class="mt-16 text-center relative z-10">
-            <p class="text-primary/30 text-[11px] font-medium max-w-lg mx-auto leading-relaxed" data-i18n="brands_desc">
+            <p class="text-primary/30 text-[11px] font-medium max-w-lg mx-auto leading-relaxed">
                 Nous travaillons exclusivement avec les leaders mondiaux de l'audioprothèse pour vous garantir une technologie de pointe et une fiabilité absolue.
             </p>
         </div>
@@ -885,93 +893,93 @@
                                 </svg>
                             </div>
                         </div>
-                        <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent" data-i18n="products_badge">Nos Solutions</h2>
+                        <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent">Nos Solutions</h2>
                     </div>
-                    <h3 class="text-4xl font-display font-bold text-primary leading-tight" data-i18n="products_title">
+                    <h3 class="text-4xl font-display font-bold text-primary leading-tight">
                         Une technologie adaptée à <span class="text-accent italic">chaque besoin.</span>
                     </h3>
                     <div class="flex gap-4 mt-6">
-                        <span class="text-[10px] font-bold text-accent uppercase tracking-[0.2em] bg-accent/5 px-3 py-1 rounded-full" data-i18n="products_tag_1">Bienveillant</span>
-                        <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] bg-primary/5 px-3 py-1 rounded-full" data-i18n="products_tag_2">Intelligent</span>
-                        <span class="text-[10px] font-bold text-cta uppercase tracking-[0.2em] bg-cta/5 px-3 py-1 rounded-full" data-i18n="products_tag_3">Serein</span>
+                        <span class="text-[10px] font-bold text-accent uppercase tracking-[0.2em] bg-accent/5 px-3 py-1 rounded-full">Bienveillant</span>
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-[0.2em] bg-primary/5 px-3 py-1 rounded-full">Intelligent</span>
+                        <span class="text-[10px] font-bold text-cta uppercase tracking-[0.2em] bg-cta/5 px-3 py-1 rounded-full">Serein</span>
                     </div>
                 </div>
-                <p class="text-text/60 text-lg max-w-md font-medium leading-relaxed" data-i18n="products_desc">
+                <p class="text-text/60 text-lg max-w-md font-medium leading-relaxed">
                     Nous sélectionnons les meilleures aides auditives du marché pour garantir discrétion, puissance et confort.
                 </p>
             </div>
             <div class="grid md:grid-cols-3 gap-12">
                 <!-- Product 1: BTE -->
-                <div class="group bg-background/30 p-6 rounded-[3rem] border border-transparent hover:border-accent/20 transition-all hover-lift">
+                <div class="group bg-background/30 p-6 rounded-[3rem] border border-transparent hover:border-accent/20 transition-all">
                     <div class="aspect-square bg-background rounded-[2.5rem] overflow-hidden mb-8 relative">
                         <img src="https://images.unsplash.com/photo-1590611390411-93f28c69a921?auto=format&fit=crop&q=80&w=800" alt="Appareil auditif Contour d'oreille (BTE) puissant" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" referrerPolicy="no-referrer">
-                        <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary" data-i18n="product_1_badge">Puissant & Robuste</div>
+                        <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">Puissant & Robuste</div>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-primary mb-4" data-i18n="product_1_title">Contours d’oreille (BTE)</h4>
-                    <p class="text-text/60 text-sm mb-6 leading-relaxed" data-i18n="product_1_desc">Idéal pour les pertes sévères à profondes. Manipulation facile et grande autonomie.</p>
+                    <h4 class="text-2xl font-display font-bold text-primary mb-4">Contours d’oreille (BTE)</h4>
+                    <p class="text-text/60 text-sm mb-6 leading-relaxed">Idéal pour les pertes sévères à profondes. Manipulation facile et grande autonomie.</p>
                     <div class="space-y-4 mb-8">
                         <div>
-                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2" data-i18n="product_benefits_label">Avantages</p>
+                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Avantages</p>
                             <ul class="grid grid-cols-2 gap-2">
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_1_benefit_1">Puissance</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_1_benefit_2">Robustesse</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_1_benefit_3">Autonomie</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_1_benefit_4">Facilité</span></li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Puissance</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Robustesse</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Autonomie</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Facilité</li>
                             </ul>
                         </div>
                         <div>
-                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2" data-i18n="product_for_whom_label">Pour qui ?</p>
-                            <p class="text-xs text-text/50 font-medium" data-i18n="product_1_for_whom">Pertes sévères à profondes, besoin de manipulation simplifiée.</p>
+                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Pour qui ?</p>
+                            <p class="text-xs text-text/50 font-medium">Pertes sévères à profondes, besoin de manipulation simplifiée.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 2: RIC -->
-                <div class="group bg-background/30 p-6 rounded-[3rem] border border-transparent hover:border-accent/20 transition-all hover-lift">
+                <div class="group bg-background/30 p-6 rounded-[3rem] border border-transparent hover:border-accent/20 transition-all">
                     <div class="aspect-square bg-background rounded-[2.5rem] overflow-hidden mb-8 relative">
                         <img src="https://images.unsplash.com/photo-1555315590-71c00bb7a9ef?auto=format&fit=crop&q=80&w=800" alt="Appareil auditif Micro-contour (RIC) discret" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" referrerPolicy="no-referrer">
-                        <div class="absolute top-6 right-6 bg-accent/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-white" data-i18n="product_2_badge">Le plus populaire</div>
+                        <div class="absolute top-6 right-6 bg-accent/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-white">Le plus populaire</div>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-primary mb-4" data-i18n="product_2_title">Micro-contours (RIC)</h4>
-                    <p class="text-text/60 text-sm mb-6 leading-relaxed" data-i18n="product_2_desc">Discrétion maximale et son naturel. Parfait pour les personnes actives.</p>
+                    <h4 class="text-2xl font-display font-bold text-primary mb-4">Micro-contours (RIC)</h4>
+                    <p class="text-text/60 text-sm mb-6 leading-relaxed">Discrétion maximale et son naturel. Parfait pour les personnes actives.</p>
                     <div class="space-y-4 mb-8">
                         <div>
-                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2" data-i18n="product_benefits_label">Avantages</p>
+                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Avantages</p>
                             <ul class="grid grid-cols-2 gap-2">
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_2_benefit_1">Discrétion</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_2_benefit_2">Son Naturel</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_2_benefit_3">Confort</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_2_benefit_4">Bluetooth</span></li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Discrétion</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Son Naturel</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Confort</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Bluetooth</li>
                             </ul>
                         </div>
                         <div>
-                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2" data-i18n="product_for_whom_label">Pour qui ?</p>
-                            <p class="text-xs text-text/50 font-medium" data-i18n="product_2_for_whom">Pertes légères à sévères, personnes actives, premier appareillage.</p>
+                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Pour qui ?</p>
+                            <p class="text-xs text-text/50 font-medium">Pertes légères à sévères, personnes actives, premier appareillage.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Product 3: Intra -->
-                <div class="group bg-background/30 p-6 rounded-[3rem] border border-transparent hover:border-accent/20 transition-all hover-lift">
+                <div class="group bg-background/30 p-6 rounded-[3rem] border border-transparent hover:border-accent/20 transition-all">
                     <div class="aspect-square bg-background rounded-[2.5rem] overflow-hidden mb-8 relative">
                         <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Appareil auditif Intra-auriculaire invisible" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" referrerPolicy="no-referrer">
-                        <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary" data-i18n="product_3_badge">100% Invisible</div>
+                        <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">100% Invisible</div>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-primary mb-4" data-i18n="product_3_title">Intra-auriculaires (ITE/CIC)</h4>
-                    <p class="text-text/60 text-sm mb-6 leading-relaxed" data-i18n="product_3_desc">Moulés sur mesure pour se loger directement dans votre conduit auditif.</p>
+                    <h4 class="text-2xl font-display font-bold text-primary mb-4">Intra-auriculaires (ITE/CIC)</h4>
+                    <p class="text-text/60 text-sm mb-6 leading-relaxed">Moulés sur mesure pour se loger directement dans votre conduit auditif.</p>
                     <div class="space-y-4 mb-8">
                         <div>
-                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2" data-i18n="product_benefits_label">Avantages</p>
+                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Avantages</p>
                             <ul class="grid grid-cols-2 gap-2">
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_3_benefit_1">Invisibilité</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_3_benefit_2">Son Naturel</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_3_benefit_3">Sur-mesure</span></li>
-                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i><span data-i18n="product_3_benefit_4">Discrétion</span></li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Invisibilité</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Son Naturel</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Sur-mesure</li>
+                                <li class="flex items-center text-[10px] font-bold text-primary/60 uppercase tracking-widest"><i data-lucide="check" class="text-accent mr-1" size="10"></i>Discrétion</li>
                             </ul>
                         </div>
                         <div>
-                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2" data-i18n="product_for_whom_label">Pour qui ?</p>
-                            <p class="text-xs text-text/50 font-medium" data-i18n="product_3_for_whom">Pertes légères à moyennes, discrétion absolue recherchée.</p>
+                            <p class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Pour qui ?</p>
+                            <p class="text-xs text-text/50 font-medium">Pertes légères à moyennes, discrétion absolue recherchée.</p>
                         </div>
                     </div>
                 </div>
@@ -1001,50 +1009,50 @@
                             </svg>
                         </div>
                     </div>
-                    <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent" data-i18n="team_badge">Notre Équipe</h2>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent">Notre Équipe</h2>
                 </div>
-                <h3 class="text-4xl font-display font-bold text-white mb-8" data-i18n="team_title">Des experts à votre écoute.</h3>
-                <p class="text-white/70 text-lg font-medium" data-i18n="team_desc">Nos audioprothésistes diplômés vous accompagnent avec expertise et bienveillance pour vous offrir la meilleure expérience auditive.</p>
+                <h3 class="text-4xl font-display font-bold text-white mb-8">Des experts à votre écoute.</h3>
+                <p class="text-white/70 text-lg font-medium">Nos audioprothésistes diplômés vous accompagnent avec expertise et bienveillance pour vous offrir la meilleure expérience auditive.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <!-- Team Member 1 -->
-                <div class="group bg-white/5 backdrop-blur-md p-6 rounded-[3.5rem] border border-white/10 hover:bg-white/10 transition-all hover-lift">
+                <div class="group bg-white/5 backdrop-blur-md p-6 rounded-[3.5rem] border border-white/10 hover:bg-white/10 transition-all">
                     <div class="aspect-[3/4] rounded-[3rem] overflow-hidden mb-8 relative shadow-xl">
                         <img src="https://images.unsplash.com/photo-1559839734-2b71f1536780?auto=format&fit=crop&q=80&w=800" alt="Dr. Sarah Mansouri - Audioprothésiste experte Clearzen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                            <p class="text-white text-sm font-medium italic" data-i18n="team_1_quote">"Votre confort est ma priorité absolue."</p>
+                            <p class="text-white text-sm font-medium italic">"Votre confort est ma priorité absolue."</p>
                         </div>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-white mb-2" data-i18n="team_1_name">Dr. Sarah Mansouri</h4>
-                    <p class="text-accent font-bold uppercase tracking-widest text-xs mb-4" data-i18n="team_1_role">Audioprothésiste D.E.</p>
-                    <p class="text-white/60 text-sm leading-relaxed" data-i18n="team_1_desc">Spécialiste en appareillage pédiatrique et acouphènes.</p>
+                    <h4 class="text-2xl font-display font-bold text-white mb-2">Dr. Sarah Mansouri</h4>
+                    <p class="text-accent font-bold uppercase tracking-widest text-xs mb-4">Audioprothésiste D.E.</p>
+                    <p class="text-white/60 text-sm leading-relaxed">Spécialiste en appareillage pédiatrique et acouphènes.</p>
                 </div>
 
                 <!-- Team Member 2 -->
-                <div class="group bg-white/5 backdrop-blur-md p-6 rounded-[3.5rem] border border-white/10 hover:bg-white/10 transition-all hover-lift">
+                <div class="group bg-white/5 backdrop-blur-md p-6 rounded-[3.5rem] border border-white/10 hover:bg-white/10 transition-all">
                     <div class="aspect-[3/4] rounded-[3rem] overflow-hidden mb-8 relative shadow-xl">
                         <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" alt="M. Yassine Benani - Spécialiste de l'audition Clearzen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                            <p class="text-white text-sm font-medium italic" data-i18n="team_2_quote">"La technologie au service de l'humain."</p>
+                            <p class="text-white text-sm font-medium italic">"La technologie au service de l'humain."</p>
                         </div>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-white mb-2" data-i18n="team_2_name">M. Yassine Benani</h4>
-                    <p class="text-accent font-bold uppercase tracking-widest text-xs mb-4" data-i18n="team_2_role">Audioprothésiste D.E.</p>
-                    <p class="text-white/60 text-sm leading-relaxed" data-i18n="team_2_desc">Expert en solutions connectées et réglages de haute précision.</p>
+                    <h4 class="text-2xl font-display font-bold text-white mb-2">M. Yassine Benani</h4>
+                    <p class="text-accent font-bold uppercase tracking-widest text-xs mb-4">Audioprothésiste D.E.</p>
+                    <p class="text-white/60 text-sm leading-relaxed">Expert en solutions connectées et réglages de haute précision.</p>
                 </div>
 
                 <!-- Team Member 3 -->
-                <div class="group bg-white/5 backdrop-blur-md p-6 rounded-[3.5rem] border border-white/10 hover:bg-white/10 transition-all hover-lift">
+                <div class="group bg-white/5 backdrop-blur-md p-6 rounded-[3.5rem] border border-white/10 hover:bg-white/10 transition-all">
                     <div class="aspect-[3/4] rounded-[3rem] overflow-hidden mb-8 relative shadow-xl">
                         <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800" alt="Mme. Leila Kadiri - Responsable Accueil Clearzen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                            <p class="text-white text-sm font-medium italic" data-i18n="team_3_quote">"Un accueil chaleureux pour chaque patient."</p>
+                            <p class="text-white text-sm font-medium italic">"Un accueil chaleureux pour chaque patient."</p>
                         </div>
                     </div>
-                    <h4 class="text-2xl font-display font-bold text-white mb-2" data-i18n="team_3_name">Mme. Leila Kadiri</h4>
-                    <p class="text-accent font-bold uppercase tracking-widest text-xs mb-4" data-i18n="team_3_role">Responsable Accueil</p>
-                    <p class="text-white/60 text-sm leading-relaxed" data-i18n="team_3_desc">À votre disposition pour toute question administrative et prise de rendez-vous.</p>
+                    <h4 class="text-2xl font-display font-bold text-white mb-2">Mme. Leila Kadiri</h4>
+                    <p class="text-accent font-bold uppercase tracking-widest text-xs mb-4">Responsable Accueil</p>
+                    <p class="text-white/60 text-sm leading-relaxed">À votre disposition pour toute question administrative et prise de rendez-vous.</p>
                 </div>
             </div>
         </div>
@@ -1054,8 +1062,8 @@
     <section id="process" class="py-16 md:py-24 bg-background relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent mb-6" data-i18n="process_badge">Le Parcours</h2>
-                <h3 class="text-4xl font-display font-bold text-primary mb-8" data-i18n="process_title">Votre retour à une audition claire en 4 étapes.</h3>
+                <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-accent mb-6">Le Parcours</h2>
+                <h3 class="text-4xl font-display font-bold text-primary mb-8">Votre retour à une audition claire en 4 étapes.</h3>
             </div>
 
             <div class="grid md:grid-cols-4 gap-8 relative">
@@ -1063,32 +1071,32 @@
                 <div class="relative">
                     <div class="text-8xl font-display font-black text-primary/5 absolute -top-10 -left-4">01</div>
                     <div class="relative z-10">
-                        <h4 class="text-xl font-display font-bold text-primary mb-4" data-i18n="process_step_1_title">Consultation & Bilan</h4>
-                        <p class="text-text/60 text-sm leading-relaxed" data-i18n="process_step_1_desc">Échange sur vos besoins et réalisation d'un test auditif complet gratuit.</p>
+                        <h4 class="text-xl font-display font-bold text-primary mb-4">Consultation & Bilan</h4>
+                        <p class="text-text/60 text-sm leading-relaxed">Échange sur vos besoins et réalisation d'un test auditif complet gratuit.</p>
                     </div>
                 </div>
                 <!-- Step 2 -->
                 <div class="relative">
                     <div class="text-8xl font-display font-black text-primary/5 absolute -top-10 -left-4">02</div>
                     <div class="relative z-10">
-                        <h4 class="text-xl font-display font-bold text-primary mb-4" data-i18n="process_step_2_title">Essai Gratuit</h4>
-                        <p class="text-text/60 text-sm leading-relaxed" data-i18n="process_step_2_desc">Testez vos aides auditives dans votre environnement réel pendant 30 jours.</p>
+                        <h4 class="text-xl font-display font-bold text-primary mb-4">Essai Gratuit</h4>
+                        <p class="text-text/60 text-sm leading-relaxed">Testez vos aides auditives dans votre environnement réel pendant 30 jours.</p>
                     </div>
                 </div>
                 <!-- Step 3 -->
                 <div class="relative">
                     <div class="text-8xl font-display font-black text-primary/5 absolute -top-10 -left-4">03</div>
                     <div class="relative z-10">
-                        <h4 class="text-xl font-display font-bold text-primary mb-4" data-i18n="process_step_3_title">Adaptation</h4>
-                        <p class="text-text/60 text-sm leading-relaxed" data-i18n="process_step_3_desc">Réglages fins et personnalisés pour un confort d'écoute optimal.</p>
+                        <h4 class="text-xl font-display font-bold text-primary mb-4">Adaptation</h4>
+                        <p class="text-text/60 text-sm leading-relaxed">Réglages fins et personnalisés pour un confort d'écoute optimal.</p>
                     </div>
                 </div>
                 <!-- Step 4 -->
                 <div class="relative">
                     <div class="text-8xl font-display font-black text-primary/5 absolute -top-10 -left-4">04</div>
                     <div class="relative z-10">
-                        <h4 class="text-xl font-display font-bold text-primary mb-4" data-i18n="process_step_4_title">Suivi Illimité</h4>
-                        <p class="text-text/60 text-sm leading-relaxed" data-i18n="process_step_4_desc">Accompagnement à vie pour l'entretien et l'ajustement de vos appareils.</p>
+                        <h4 class="text-xl font-display font-bold text-primary mb-4">Suivi Illimité</h4>
+                        <p class="text-text/60 text-sm leading-relaxed">Accompagnement à vie pour l'entretien et l'ajustement de vos appareils.</p>
                     </div>
                 </div>
             </div>
@@ -1108,47 +1116,47 @@
                             </svg>
                         </div>
                     </div>
-                    <h2 class="text-accent font-bold uppercase tracking-[0.3em] text-xs" data-i18n="faq_badge">FAQ</h2>
+                    <h2 class="text-accent font-bold uppercase tracking-[0.3em] text-xs">FAQ</h2>
                 </div>
-                <p class="text-3xl sm:text-5xl font-display font-bold text-primary mb-8" data-i18n="faq_title">Questions Fréquentes</p>
+                <p class="text-3xl sm:text-5xl font-display font-bold text-primary mb-8">Questions Fréquentes</p>
             </div>
             <div class="space-y-4" id="faq-container">
-                            <div class="faq-item group bg-background rounded-3xl overflow-hidden border border-slate-100 transition-all duration-300">
-                                <button class="w-full px-8 py-6 flex items-center justify-between text-left" aria-expanded="false">
-                                    <span class="text-lg font-bold text-primary" data-i18n="faq_q1">Combien de temps dure un bilan auditif ?</span>
-                                    <i data-lucide="chevron-down" class="faq-icon text-accent transition-transform duration-300"></i>
-                                </button>
-                                <div class="faq-content hidden px-8 pb-8 text-text/60 font-medium leading-relaxed" data-i18n="faq_a1">
-                                    Un bilan auditif complet dure environ 45 minutes. Il comprend une anamnèse, une otoscopie et des tests audiométriques précis pour évaluer votre audition.
-                                </div>
-                            </div>
-                            <div class="faq-item group bg-background rounded-3xl overflow-hidden border border-slate-100 transition-all duration-300">
-                                <button class="w-full px-8 py-6 flex items-center justify-between text-left" aria-expanded="false">
-                                    <span class="text-lg font-bold text-primary" data-i18n="faq_q2">Les appareils auditifs sont-ils vraiment visibles ?</span>
-                                    <i data-lucide="chevron-down" class="faq-icon text-accent transition-transform duration-300"></i>
-                                </button>
-                                <div class="faq-content hidden px-8 pb-8 text-text/60 font-medium leading-relaxed" data-i18n="faq_a2">
-                                    Aujourd'hui, la technologie permet une discrétion absolue. Nous proposons des modèles intra-auriculaires totalement invisibles qui se logent au fond du conduit auditif.
-                                </div>
-                            </div>
-                            <div class="faq-item group bg-background rounded-3xl overflow-hidden border border-slate-100 transition-all duration-300">
-                                <button class="w-full px-8 py-6 flex items-center justify-between text-left" aria-expanded="false">
-                                    <span class="text-lg font-bold text-primary" data-i18n="faq_q3">Quelles sont les garanties sur les appareils ?</span>
-                                    <i data-lucide="chevron-down" class="faq-icon text-accent transition-transform duration-300"></i>
-                                </button>
-                                <div class="faq-content hidden px-8 pb-8 text-text/60 font-medium leading-relaxed" data-i18n="faq_a3">
-                                    Tous nos appareils auditifs bénéficient d'une garantie constructeur de 4 ans couvrant les pannes et les défauts de fabrication.
-                                </div>
-                            </div>
-                            <div class="faq-item group bg-background rounded-3xl overflow-hidden border border-slate-100 transition-all duration-300">
-                                <button class="w-full px-8 py-6 flex items-center justify-between text-left" aria-expanded="false">
-                                    <span class="text-lg font-bold text-primary" data-i18n="faq_q4">Proposez-vous des facilités de paiement ?</span>
-                                    <i data-lucide="chevron-down" class="faq-icon text-accent transition-transform duration-300"></i>
-                                </button>
-                                <div class="faq-content hidden px-8 pb-8 text-text/60 font-medium leading-relaxed" data-i18n="faq_a4">
-                                    Oui, nous proposons des solutions de financement flexibles, incluant le paiement jusqu'à 12 fois sans frais pour faciliter l'accès à une meilleure audition.
-                                </div>
-                            </div>
+                <div class="faq-item group bg-background rounded-3xl overflow-hidden border border-slate-100 transition-all duration-300">
+                    <button class="w-full px-8 py-6 flex items-center justify-between text-left">
+                        <span class="text-lg font-bold text-primary">Combien de temps dure un bilan auditif ?</span>
+                        <i data-lucide="chevron-down" class="faq-icon text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8 text-text/60 font-medium leading-relaxed">
+                        Un bilan auditif complet dure environ 45 minutes. Il comprend une anamnèse, une otoscopie et des tests audiométriques précis pour évaluer votre audition.
+                    </div>
+                </div>
+                <div class="faq-item group bg-background rounded-3xl overflow-hidden border border-slate-100 transition-all duration-300">
+                    <button class="w-full px-8 py-6 flex items-center justify-between text-left">
+                        <span class="text-lg font-bold text-primary">Les appareils auditifs sont-ils vraiment visibles ?</span>
+                        <i data-lucide="chevron-down" class="faq-icon text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8 text-text/60 font-medium leading-relaxed">
+                        Aujourd'hui, la technologie permet une discrétion absolue. Nous proposons des modèles intra-auriculaires totalement invisibles qui se logent au fond du conduit auditif.
+                    </div>
+                </div>
+                <div class="faq-item group bg-background rounded-3xl overflow-hidden border border-slate-100 transition-all duration-300">
+                    <button class="w-full px-8 py-6 flex items-center justify-between text-left">
+                        <span class="text-lg font-bold text-primary">Quelles sont les garanties sur les appareils ?</span>
+                        <i data-lucide="chevron-down" class="faq-icon text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8 text-text/60 font-medium leading-relaxed">
+                        Tous nos appareils auditifs bénéficient d'une garantie constructeur de 4 ans couvrant les pannes et les défauts de fabrication.
+                    </div>
+                </div>
+                <div class="faq-item group bg-background rounded-3xl overflow-hidden border border-slate-100 transition-all duration-300">
+                    <button class="w-full px-8 py-6 flex items-center justify-between text-left">
+                        <span class="text-lg font-bold text-primary">Proposez-vous des facilités de paiement ?</span>
+                        <i data-lucide="chevron-down" class="faq-icon text-accent transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8 text-text/60 font-medium leading-relaxed">
+                        Oui, nous proposons des solutions de financement flexibles, incluant le paiement jusqu'à 12 fois sans frais pour faciliter l'accès à une meilleure audition.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1200,10 +1208,10 @@
                                 <i data-lucide="phone" class="text-accent" size="28"></i>
                             </div>
                             <div>
-                                <p class="text-white font-bold text-2xl mb-2" data-i18n="contact_phone_label">Téléphone</p>
+                                <p class="text-white font-bold text-2xl mb-2">Téléphone</p>
                                 <a href="tel:+212520144262" class="text-4xl font-display font-bold text-white hover:text-accent transition-colors drop-shadow-lg">05 20 14 42 62</a>
                                 <div class="flex items-center space-x-4 mt-4">
-                                    <p class="text-white/60 text-base font-medium" data-i18n="contact_mobile_label">Mobile : 06 23 86 17 93</p>
+                                    <p class="text-white/60 text-base font-medium">Mobile : 06 23 86 17 93</p>
                                     <a href="https://wa.me/212623861793" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center hover:scale-105 transition-transform">
                                         <i data-lucide="message-circle" size="14" class="mr-2"></i>
                                         WhatsApp
@@ -1217,33 +1225,33 @@
                                 <i data-lucide="clock" class="text-accent" size="28"></i>
                             </div>
                             <div>
-                                <p class="text-white font-bold text-2xl mb-2" data-i18n="contact_hours_label">Horaires</p>
-                                <p class="text-white text-lg font-medium leading-relaxed drop-shadow-md" data-i18n="contact_hours_value">Lun - Ven : 09:00 - 18:30<br />Sam : 09:00 - 13:00</p>
+                                <p class="text-white font-bold text-2xl mb-2">Horaires</p>
+                                <p class="text-white text-lg font-medium leading-relaxed drop-shadow-md">Lun - Ven : 09:00 - 18:30<br />Sam : 09:00 - 13:00</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="bg-white rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 shadow-2xl">
-                    <h3 class="text-3xl font-display font-bold text-primary mb-8" data-i18n="contact_form_title">Demander un rappel</h3>
+                    <h3 class="text-3xl font-display font-bold text-primary mb-8">Demander un rappel</h3>
                     <form id="contact-form" class="space-y-6">
                         <div class="space-y-2">
-                            <label class="text-xs font-bold text-primary/40 uppercase tracking-widest ml-1" data-i18n="contact_form_name_label">Nom Complet</label>
-                            <input type="text" name="name" required class="w-full px-6 py-4 rounded-2xl bg-background border border-slate-100 text-primary focus:ring-2 focus:ring-accent outline-none transition-all font-medium" placeholder="Votre nom" data-i18n-placeholder="contact_form_name_placeholder">
+                            <label class="text-xs font-bold text-primary/40 uppercase tracking-widest ml-1">Nom Complet</label>
+                            <input type="text" name="name" required class="w-full px-6 py-4 rounded-2xl bg-background border border-slate-100 text-primary focus:ring-2 focus:ring-accent outline-none transition-all font-medium" placeholder="Votre nom">
                         </div>
                         <div class="space-y-2">
-                            <label class="text-xs font-bold text-primary/40 uppercase tracking-widest ml-1" data-i18n="contact_form_phone_label">Téléphone</label>
-                            <input type="tel" name="phone" required class="w-full px-6 py-4 rounded-2xl bg-background border border-slate-100 text-primary focus:ring-2 focus:ring-accent outline-none transition-all font-medium" placeholder="06 XX XX XX XX" data-i18n-placeholder="contact_form_phone_placeholder">
+                            <label class="text-xs font-bold text-primary/40 uppercase tracking-widest ml-1">Téléphone</label>
+                            <input type="tel" name="phone" required class="w-full px-6 py-4 rounded-2xl bg-background border border-slate-100 text-primary focus:ring-2 focus:ring-accent outline-none transition-all font-medium" placeholder="06 XX XX XX XX">
                         </div>
                         <div class="space-y-2">
-                            <label class="text-xs font-bold text-primary/40 uppercase tracking-widest ml-1" data-i18n="contact_form_subject_label">Sujet</label>
+                            <label class="text-xs font-bold text-primary/40 uppercase tracking-widest ml-1">Sujet</label>
                             <select name="subject" class="w-full px-6 py-4 rounded-2xl bg-background border border-slate-100 text-primary focus:ring-2 focus:ring-accent outline-none transition-all font-medium appearance-none">
-                                <option data-i18n="contact_form_opt_1">Bilan auditif gratuit</option>
-                                <option data-i18n="contact_form_opt_2">Réparation appareil</option>
-                                <option data-i18n="contact_form_opt_3">Information remboursement</option>
-                                <option data-i18n="contact_form_opt_4">Autre</option>
+                                <option>Bilan auditif gratuit</option>
+                                <option>Réparation appareil</option>
+                                <option>Information remboursement</option>
+                                <option>Autre</option>
                             </select>
                         </div>
-                        <button type="submit" class="w-full bg-cta text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-[0.2em] hover:bg-cta/90 transition-all shadow-xl shadow-cta/20 mt-4" data-i18n="contact_form_submit">
+                        <button type="submit" class="w-full bg-cta text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-[0.2em] hover:bg-cta/90 transition-all shadow-xl shadow-cta/20 mt-4">
                             Envoyer ma demande
                         </button>
                     </form>
@@ -1251,8 +1259,8 @@
                         <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i data-lucide="check-circle-2" size="40"></i>
                         </div>
-                        <h4 class="text-2xl font-display font-bold text-primary mb-4" data-i18n="contact_form_success_title">Demande Envoyée !</h4>
-                        <p class="text-text/60 font-medium" data-i18n="contact_form_success_desc">Nous vous rappellerons très prochainement.</p>
+                        <h4 class="text-2xl font-display font-bold text-primary mb-4">Demande Envoyée !</h4>
+                        <p class="text-text/60 font-medium">Nous vous rappellerons très prochainement.</p>
                     </div>
                 </div>
             </div>
@@ -1276,7 +1284,7 @@
                         </div>
                         <span class="text-2xl font-display font-black tracking-tighter uppercase">Clearzen<span class="text-accent italic">Audition</span></span>
                     </div>
-                    <p class="text-white/60 text-sm max-w-md leading-relaxed font-bold mb-8" data-i18n="footer_desc">
+                    <p class="text-white/60 text-sm max-w-md leading-relaxed font-bold mb-8">
                         Votre centre d'excellence auditive à Casablanca. Nous allions expertise médicale, technologies de pointe et accompagnement personnalisé pour redonner vie à vos sens.
                     </p>
                     <div class="flex space-x-4">
@@ -1295,17 +1303,17 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-accent mb-8" data-i18n="footer_nav_title">Navigation</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-accent mb-8">Navigation</h4>
                     <ul class="space-y-4">
-                        <li><a href="#home" class="text-white/60 hover:text-accent transition-colors text-sm font-bold" data-i18n="nav_home">Accueil</a></li>
-                        <li><a href="#mission" class="text-white/60 hover:text-accent transition-colors text-sm font-bold" data-i18n="nav_mission">Notre Mission</a></li>
-                        <li><a href="#services" class="text-white/60 hover:text-accent transition-colors text-sm font-bold" data-i18n="nav_services">Services</a></li>
-                        <li><a href="#products" class="text-white/60 hover:text-accent transition-colors text-sm font-bold" data-i18n="nav_solutions">Solutions</a></li>
-                        <li><a href="#contact" class="text-white/60 hover:text-accent transition-colors text-sm font-bold" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="#home" class="text-white/60 hover:text-accent transition-colors text-sm font-bold">Accueil</a></li>
+                        <li><a href="#mission" class="text-white/60 hover:text-accent transition-colors text-sm font-bold">Notre Mission</a></li>
+                        <li><a href="#services" class="text-white/60 hover:text-accent transition-colors text-sm font-bold">Services</a></li>
+                        <li><a href="#products" class="text-white/60 hover:text-accent transition-colors text-sm font-bold">Solutions</a></li>
+                        <li><a href="#contact" class="text-white/60 hover:text-accent transition-colors text-sm font-bold">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-accent mb-8" data-i18n="footer_openings_title">Ouvertures 2026</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-accent mb-8">Ouvertures 2026</h4>
                     <ul class="space-y-4">
                         <li class="flex items-center space-x-3 text-white/60 text-sm font-bold">
                             <div class="w-1.5 h-1.5 bg-accent rounded-full"></div>
@@ -1328,17 +1336,11 @@
             </div>
             
             <div class="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <p class="text-white/40 text-[10px] font-bold uppercase tracking-widest" data-i18n="footer_copyright">
-                        &copy; 2026 Clearzen Audition. Tous droits réservés.
-                    </p>
-                    <div class="flex items-center space-x-4 bg-white/5 p-1 rounded-full border border-white/5">
-                        <button onclick="setLanguage('fr')" class="lang-btn-fr-footer px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-white/10 text-white">FR</button>
-                        <button onclick="setLanguage('en')" class="lang-btn-en-footer px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-white/10 text-white/40">EN</button>
-                    </div>
-                </div>
+                <p class="text-white/40 text-[10px] font-bold uppercase tracking-widest">
+                    &copy; 2026 Clearzen Audition. Tous droits réservés.
+                </p>
                 <div class="flex flex-col items-center md:items-end gap-4">
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40" data-i18n="footer_follow_title">Suivez-nous</h4>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40">Suivez-nous</h4>
                     <div class="flex space-x-6">
                         <a href="https://facebook.com/clearzen.audition" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white/40 hover:bg-accent hover:text-white transition-all" aria-label="Suivez-nous sur Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -1371,28 +1373,28 @@
                     <div class="w-20 h-20 bg-accent/10 rounded-[2rem] flex items-center justify-center text-accent mb-8">
                         <i data-lucide="activity" size="40"></i>
                     </div>
-                    <h3 class="text-4xl font-display font-bold text-primary mb-6" data-i18n="test_intro_title">Évaluez votre audition en 30 secondes.</h3>
-                    <p class="text-text/60 text-lg mb-10 leading-relaxed font-medium" data-i18n="test_intro_desc">Répondez à quelques questions simples pour obtenir une première évaluation de votre santé auditive.</p>
-                    <button onclick="nextTestStep(2)" class="w-full bg-cta text-white py-6 rounded-2xl font-bold text-lg shadow-xl shadow-cta/20 hover:scale-[1.02] active:scale-95 transition-all" data-i18n="test_intro_btn">
+                    <h3 class="text-4xl font-display font-bold text-primary mb-6">Évaluez votre audition en 30 secondes.</h3>
+                    <p class="text-text/60 text-lg mb-10 leading-relaxed font-medium">Répondez à quelques questions simples pour obtenir une première évaluation de votre santé auditive.</p>
+                    <button onclick="nextTestStep(2)" class="w-full bg-cta text-white py-6 rounded-2xl font-bold text-lg shadow-xl shadow-cta/20 hover:scale-[1.02] active:scale-95 transition-all">
                         Commencer le test
                     </button>
                 </div>
 
                 <!-- Step 2: Q1 -->
                 <div id="test-step-2" class="test-step hidden">
-                    <span class="text-accent font-bold uppercase tracking-widest text-xs mb-4 block" data-i18n="test_q1_label">Question 1/3</span>
-                    <h3 class="text-3xl font-display font-bold text-primary mb-10" data-i18n="test_q1_title">Avez-vous du mal à suivre une conversation dans un environnement bruyant ?</h3>
+                    <span class="text-accent font-bold uppercase tracking-widest text-xs mb-4 block">Question 1/3</span>
+                    <h3 class="text-3xl font-display font-bold text-primary mb-10">Avez-vous du mal à suivre une conversation dans un environnement bruyant ?</h3>
                     <div class="space-y-4">
                         <button onclick="nextTestStep(3)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q1_opt_1">Oui, souvent</span>
+                            <span>Oui, souvent</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                         <button onclick="nextTestStep(3)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q1_opt_2">Parfois</span>
+                            <span>Parfois</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                         <button onclick="nextTestStep(3)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q1_opt_3">Non, jamais</span>
+                            <span>Non, jamais</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                     </div>
@@ -1400,19 +1402,19 @@
 
                 <!-- Step 3: Q2 -->
                 <div id="test-step-3" class="test-step hidden">
-                    <span class="text-accent font-bold uppercase tracking-widest text-xs mb-4 block" data-i18n="test_q2_label">Question 2/3</span>
-                    <h3 class="text-3xl font-display font-bold text-primary mb-10" data-i18n="test_q2_title">Vos proches remarquent-ils que vous montez trop fort le volume de la télévision ?</h3>
+                    <span class="text-accent font-bold uppercase tracking-widest text-xs mb-4 block">Question 2/3</span>
+                    <h3 class="text-3xl font-display font-bold text-primary mb-10">Vos proches remarquent-ils que vous montez trop fort le volume de la télévision ?</h3>
                     <div class="space-y-4">
                         <button onclick="nextTestStep(4)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q2_opt_1">Oui, régulièrement</span>
+                            <span>Oui, régulièrement</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                         <button onclick="nextTestStep(4)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q2_opt_2">De temps en temps</span>
+                            <span>De temps en temps</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                         <button onclick="nextTestStep(4)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q2_opt_3">Non</span>
+                            <span>Non</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                     </div>
@@ -1420,19 +1422,19 @@
 
                 <!-- Step 4: Q3 -->
                 <div id="test-step-4" class="test-step hidden">
-                    <span class="text-accent font-bold uppercase tracking-widest text-xs mb-4 block" data-i18n="test_q3_label">Question 3/3</span>
-                    <h3 class="text-3xl font-display font-bold text-primary mb-10" data-i18n="test_q3_title">Ressentez-vous des sifflements ou des bourdonnements dans vos oreilles ?</h3>
+                    <span class="text-accent font-bold uppercase tracking-widest text-xs mb-4 block">Question 3/3</span>
+                    <h3 class="text-3xl font-display font-bold text-primary mb-10">Ressentez-vous des sifflements ou des bourdonnements dans vos oreilles ?</h3>
                     <div class="space-y-4">
                         <button onclick="nextTestStep(5)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q3_opt_1">Oui, souvent</span>
+                            <span>Oui, souvent</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                         <button onclick="nextTestStep(5)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q3_opt_2">Rarement</span>
+                            <span>Rarement</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                         <button onclick="nextTestStep(5)" class="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-accent hover:bg-accent/5 transition-all font-bold text-primary flex items-center justify-between group">
-                            <span data-i18n="test_q3_opt_3">Non</span>
+                            <span>Non</span>
                             <i data-lucide="chevron-right" class="text-slate-300 group-hover:text-accent transition-colors" size="20"></i>
                         </button>
                     </div>
@@ -1443,13 +1445,13 @@
                     <div class="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-600 mb-8">
                         <i data-lucide="check-circle" size="32"></i>
                     </div>
-                    <h3 class="text-3xl font-display font-bold text-primary mb-6" data-i18n="test_result_title">Test terminé !</h3>
-                    <p class="text-text/60 text-lg mb-10 leading-relaxed font-medium" data-i18n="test_result_desc">Votre profil suggère qu'un bilan complet serait bénéfique. Laissez vos coordonnées pour être rappelé par un expert.</p>
+                    <h3 class="text-3xl font-display font-bold text-primary mb-6">Test terminé !</h3>
+                    <p class="text-text/60 text-lg mb-10 leading-relaxed font-medium">Votre profil suggère qu'un bilan complet serait bénéfique. Laissez vos coordonnées pour être rappelé par un expert.</p>
                     
                     <form id="test-form" class="space-y-4">
-                        <input type="text" placeholder="Votre nom complet" required class="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-accent outline-none transition-all font-medium" data-i18n-placeholder="test_form_name_placeholder">
-                        <input type="tel" placeholder="Votre numéro de téléphone" required class="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-accent outline-none transition-all font-medium" data-i18n-placeholder="test_form_phone_placeholder">
-                        <button type="submit" class="w-full bg-cta text-white py-6 rounded-2xl font-bold text-lg shadow-xl shadow-cta/20 hover:scale-[1.02] active:scale-95 transition-all" data-i18n="test_form_submit">
+                        <input type="text" placeholder="Votre nom complet" required class="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-accent outline-none transition-all font-medium">
+                        <input type="tel" placeholder="Votre numéro de téléphone" required class="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-accent outline-none transition-all font-medium">
+                        <button type="submit" class="w-full bg-cta text-white py-6 rounded-2xl font-bold text-lg shadow-xl shadow-cta/20 hover:scale-[1.02] active:scale-95 transition-all">
                             Demander mon bilan gratuit
                         </button>
                     </form>
@@ -1460,8 +1462,8 @@
                     <div class="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-2xl shadow-green-500/40">
                         <i data-lucide="check" size="48"></i>
                     </div>
-                    <h3 class="text-4xl font-display font-bold text-primary mb-6" data-i18n="test_success_title">C'est noté !</h3>
-                    <p class="text-text/60 text-lg leading-relaxed font-medium" data-i18n="test_success_desc">Un audioprothésiste Clearzen vous contactera dans les plus brefs délais pour fixer votre rendez-vous.</p>
+                    <h3 class="text-4xl font-display font-bold text-primary mb-6">C'est noté !</h3>
+                    <p class="text-text/60 text-lg leading-relaxed font-medium">Un audioprothésiste Clearzen vous contactera dans les plus brefs délais pour fixer votre rendez-vous.</p>
                 </div>
             </div>
         </div>
@@ -1480,13 +1482,13 @@
                 <div class="md:w-3/5 p-8 sm:p-10">
                     <div class="inline-flex items-center space-x-2 bg-accent/10 px-3 py-1 rounded-full mb-4">
                         <i data-lucide="star" class="text-accent fill-accent" size="12"></i>
-                        <span class="text-accent text-[10px] font-bold uppercase tracking-widest" data-i18n="popup_special_offer">Offre Spéciale</span>
+                        <span class="text-accent text-[10px] font-bold uppercase tracking-widest">Offre Spéciale</span>
                     </div>
-                    <h3 class="text-2xl sm:text-3xl font-display font-bold text-primary mb-4 leading-tight" data-i18n="popup_title">Votre bilan auditif est <span class="text-accent italic">offert</span> !</h3>
-                    <p class="text-text/60 text-sm mb-8 leading-relaxed font-medium" data-i18n="popup_desc">Prenez rendez-vous aujourd'hui pour un test complet gratuit.</p>
+                    <h3 class="text-2xl sm:text-3xl font-display font-bold text-primary mb-4 leading-tight">Votre bilan auditif est <span class="text-accent italic">offert</span> !</h3>
+                    <p class="text-text/60 text-sm mb-8 leading-relaxed font-medium">Prenez rendez-vous aujourd'hui pour un test complet gratuit.</p>
                     <div class="space-y-3">
-                        <button id="popup-cta-btn" class="w-full bg-cta text-white py-4 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-cta/90 transition-all shadow-lg shadow-cta/20 flex items-center justify-center group">
-                            <span data-i18n="popup_cta">Prendre RDV</span>
+                        <button id="popup-cta-btn" onclick="window.openTestModal()" class="w-full bg-cta text-white py-4 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-cta/90 transition-all shadow-lg shadow-cta/20 flex items-center justify-center group">
+                            <span>Prendre RDV</span>
                             <i data-lucide="chevron-right" size="18" class="ml-2 group-hover:translate-x-1 transition-transform"></i>
                         </button>
                     </div>
@@ -1504,9 +1506,9 @@
             <div class="w-24 h-24 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-8">
                 <i data-lucide="gift" size="40"></i>
             </div>
-            <h3 class="text-3xl font-display font-bold text-primary mb-6" data-i18n="exit_popup_title">Ne partez pas si vite !</h3>
-            <p class="text-text/60 mb-10 leading-relaxed font-medium" data-i18n="exit_popup_desc">Profitez d'une remise de <span class="text-accent font-bold">10%</span> sur vos accessoires pour votre première visite.</p>
-            <a href="#contact" id="exit-cta-btn" class="block w-full bg-primary text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/20" data-i18n="exit_popup_cta">
+            <h3 class="text-3xl font-display font-bold text-primary mb-6">Ne partez pas si vite !</h3>
+            <p class="text-text/60 mb-10 leading-relaxed font-medium">Profitez d'une remise de <span class="text-accent font-bold">10%</span> sur vos accessoires pour votre première visite.</p>
+            <a href="#contact" id="exit-cta-btn" class="block w-full bg-primary text-white py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all shadow-xl shadow-primary/20">
                 En profiter maintenant
             </a>
         </div>
@@ -1519,10 +1521,10 @@
                 <i data-lucide="bell-ring" size="28" class="animate-tada"></i>
             </div>
             <div>
-                <p class="text-primary font-bold text-sm mb-1" data-i18n="scroll_popup_title">Besoin d'aide ?</p>
-                <p class="text-text/60 text-xs mb-3 font-medium" data-i18n="scroll_popup_desc">Nos experts sont disponibles pour répondre à vos questions.</p>
+                <p class="text-primary font-bold text-sm mb-1">Besoin d'aide ?</p>
+                <p class="text-text/60 text-xs mb-3 font-medium">Nos experts sont disponibles pour répondre à vos questions.</p>
                 <div class="flex space-x-4">
-                    <a href="tel:+212520144262" class="text-accent font-bold text-[10px] uppercase tracking-widest hover:underline" data-i18n="scroll_popup_call">Appeler</a>
+                    <a href="tel:+212520144262" class="text-accent font-bold text-[10px] uppercase tracking-widest hover:underline">Appeler</a>
                     <a href="https://wa.me/212623861793" target="_blank" rel="noopener noreferrer" class="text-[#25D366] font-bold text-[10px] uppercase tracking-widest hover:underline">WhatsApp</a>
                 </div>
             </div>
@@ -1533,31 +1535,31 @@
     </div>
 
     <!-- Dynamic Mobile Taskbar -->
-    <div id="mobile-taskbar" class="fixed bottom-0 left-0 right-0 z-[60] w-full md:hidden transition-all duration-500 translate-y-20 opacity-0">
-        <div class="bg-white/95 backdrop-blur-2xl p-2 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] border-t border-slate-100 flex items-center justify-around pb-safe">
-            <a href="#home" class="mobile-taskbar-link flex-1 flex flex-col items-center justify-center py-2 text-primary/50 hover:text-primary transition-all group relative">
-                <i data-lucide="home" size="20" class="group-[.active-nav-link]:text-accent group-[.active-nav-link]:scale-110 transition-all duration-300"></i>
-                <span class="text-[9px] font-bold uppercase tracking-tighter mt-1 group-[.active-nav-link]:text-primary transition-all duration-300" data-i18n="taskbar_home">Accueil</span>
+    <div id="mobile-taskbar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] w-[92%] max-w-md md:hidden transition-all duration-500 translate-y-20 opacity-0">
+        <div class="bg-white backdrop-blur-2xl rounded-[2.5rem] p-2 shadow-[0_20px_50px_-15px_rgba(27,54,93,0.15)] border border-slate-200 flex items-center justify-around">
+            <a href="#home" class="mobile-taskbar-link flex-1 flex flex-col items-center justify-center py-3 text-primary/60 hover:text-primary active:scale-90 transition-all group relative" data-section="home">
+                <i data-lucide="home" size="22" class="group-[.active-nav-link]:text-accent group-[.active-nav-link]:scale-110 transition-all duration-300"></i>
+                <span class="text-[9px] font-bold uppercase tracking-tighter mt-1 group-[.active-nav-link]:text-primary transition-all duration-300">Accueil</span>
                 <div class="absolute -bottom-1 w-1 h-1 bg-accent rounded-full opacity-0 group-[.active-nav-link]:opacity-100 transition-all duration-300"></div>
             </a>
-            <a href="#services" class="mobile-taskbar-link flex-1 flex flex-col items-center justify-center py-2 text-primary/50 hover:text-primary transition-all group relative">
-                <i data-lucide="stethoscope" size="20" class="group-[.active-nav-link]:text-accent group-[.active-nav-link]:scale-110 transition-all duration-300"></i>
-                <span class="text-[9px] font-bold uppercase tracking-tighter mt-1 group-[.active-nav-link]:text-primary transition-all duration-300" data-i18n="taskbar_services">Services</span>
+            <a href="#services" class="mobile-taskbar-link flex-1 flex flex-col items-center justify-center py-3 text-primary/60 hover:text-primary active:scale-90 transition-all group relative" data-section="services">
+                <i data-lucide="stethoscope" size="22" class="group-[.active-nav-link]:text-accent group-[.active-nav-link]:scale-110 transition-all duration-300"></i>
+                <span class="text-[9px] font-bold uppercase tracking-tighter mt-1 group-[.active-nav-link]:text-primary transition-all duration-300">Services</span>
                 <div class="absolute -bottom-1 w-1 h-1 bg-accent rounded-full opacity-0 group-[.active-nav-link]:opacity-100 transition-all duration-300"></div>
             </a>
-            <div class="flex-1 flex justify-center -mt-14">
+            <div class="flex-1 flex justify-center -mt-12">
                 <a href="tel:+212520144262" class="flex items-center justify-center w-16 h-16 bg-cta text-white rounded-full shadow-[0_10px_25px_-5px_rgba(234,88,12,0.5)] border-4 border-white hover:scale-110 active:scale-90 transition-all duration-300" aria-label="Appeler maintenant">
                     <i data-lucide="phone" size="28"></i>
                 </a>
             </div>
-            <a href="https://wa.me/212623861793" target="_blank" class="mobile-taskbar-link flex-1 flex flex-col items-center justify-center py-2 text-primary/50 hover:text-primary transition-all group relative">
-                <i data-lucide="message-circle" size="20" class="group-[.active-nav-link]:text-accent group-[.active-nav-link]:scale-110 transition-all duration-300"></i>
-                <span class="text-[9px] font-bold uppercase tracking-tighter mt-1 group-[.active-nav-link]:text-primary transition-all duration-300" data-i18n="taskbar_whatsapp">WhatsApp</span>
+            <a href="https://wa.me/212623861793" target="_blank" class="mobile-taskbar-link flex-1 flex flex-col items-center justify-center py-3 text-primary/60 hover:text-primary active:scale-90 transition-all group relative">
+                <i data-lucide="message-circle" size="22" class="group-[.active-nav-link]:text-accent group-[.active-nav-link]:scale-110 transition-all duration-300"></i>
+                <span class="text-[9px] font-bold uppercase tracking-tighter mt-1 group-[.active-nav-link]:text-primary transition-all duration-300">WhatsApp</span>
                 <div class="absolute -bottom-1 w-1 h-1 bg-accent rounded-full opacity-0 group-[.active-nav-link]:opacity-100 transition-all duration-300"></div>
             </a>
-            <button id="mobile-menu-trigger" class="flex-1 flex flex-col items-center justify-center py-2 text-primary/50 hover:text-primary transition-all group">
-                <i data-lucide="menu" size="20" class="transition-all duration-300"></i>
-                <span class="text-[9px] font-bold uppercase tracking-tighter mt-1 transition-all duration-300" data-i18n="taskbar_menu">Menu</span>
+            <button id="mobile-menu-trigger" class="flex-1 flex flex-col items-center justify-center py-3 text-primary/60 hover:text-primary active:scale-90 transition-all group">
+                <i data-lucide="menu" size="22" class="transition-all duration-300"></i>
+                <span class="text-[9px] font-bold uppercase tracking-tighter mt-1 transition-all duration-300">Menu</span>
             </button>
         </div>
     </div>
@@ -1565,7 +1567,7 @@
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/212623861793" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_10px_25px_-5px_rgba(37,211,102,0.5)] flex items-center justify-center hover:scale-110 active:scale-90 transition-all duration-300 group md:bottom-8 md:right-24" aria-label="Contactez-nous sur WhatsApp">
         <i data-lucide="message-circle" size="32" class="group-hover:animate-pulse"></i>
-        <span class="absolute right-full mr-4 bg-white text-primary px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 translate-x-4 pointer-events-none transition-all group-hover:opacity-100 group-hover:translate-x-0 whitespace-nowrap hidden md:block" data-i18n="whatsapp_float_text">
+        <span class="absolute right-full mr-4 bg-white text-primary px-4 py-2 rounded-xl text-sm font-bold shadow-xl opacity-0 translate-x-4 pointer-events-none transition-all group-hover:opacity-100 group-hover:translate-x-0 whitespace-nowrap hidden md:block">
             Besoin d'aide ? Discutons !
         </span>
     </a>
@@ -1584,17 +1586,17 @@
                         <i data-lucide="shield-check" size="24"></i>
                     </div>
                     <div>
-                        <h4 class="text-primary font-bold text-lg mb-1" data-i18n="cookie_title">Respect de votre vie privée</h4>
-                        <p class="text-text/60 text-sm leading-relaxed max-w-2xl" data-i18n="cookie_desc">
+                        <h4 class="text-primary font-bold text-lg mb-1">Respect de votre vie privée</h4>
+                        <p class="text-text/60 text-sm leading-relaxed max-w-2xl">
                             Nous utilisons des cookies pour améliorer votre expérience, analyser le trafic et personnaliser le contenu. En continuant à naviguer, vous acceptez notre utilisation des cookies.
                         </p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4 w-full md:w-auto">
-                    <button id="accept-cookies" class="flex-1 md:flex-none bg-primary text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-all whitespace-nowrap" data-i18n="cookie_accept">
+                    <button id="accept-cookies" class="flex-1 md:flex-none bg-primary text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-primary/90 transition-all whitespace-nowrap">
                         Accepter
                     </button>
-                    <button id="decline-cookies" class="flex-1 md:flex-none bg-slate-100 text-primary/60 px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-slate-200 transition-all whitespace-nowrap" data-i18n="cookie_decline">
+                    <button id="decline-cookies" class="flex-1 md:flex-none bg-slate-100 text-primary/60 px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-slate-200 transition-all whitespace-nowrap">
                         Refuser
                     </button>
                 </div>
@@ -1603,7 +1605,7 @@
     </div>
 
     <!-- Chatbot Widget -->
-    <div id="chatbot-container" class="fixed bottom-24 right-6 z-[1000] flex flex-col items-end pointer-events-none">
+    <div id="chatbot-container" class="fixed bottom-[100px] right-4 z-[1000] flex flex-col items-end pointer-events-none md:bottom-8 md:right-8">
         <!-- Chat Window -->
         <div id="chat-window" class="hidden w-[320px] sm:w-[380px] h-[500px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 transform translate-y-10 opacity-0 pointer-events-auto border border-gray-100">
             <!-- Header -->
@@ -1613,10 +1615,10 @@
                         <i data-lucide="bot" size="24"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-sm" data-i18n="chatbot_name">Assistant Clearzen</h4>
+                        <h4 class="font-bold text-sm">Assistant Clearzen</h4>
                         <div class="flex items-center gap-1.5">
                             <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                            <span class="text-[10px] text-white/80" data-i18n="chatbot_status">En ligne</span>
+                            <span class="text-[10px] text-white/80">En ligne</span>
                         </div>
                     </div>
                 </div>
@@ -1633,14 +1635,14 @@
                         <i data-lucide="bot" size="16" class="text-[#1B365D]"></i>
                     </div>
                     <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-100">
-                        <p class="text-sm text-gray-700 leading-relaxed" data-i18n="chatbot_welcome">Bonjour ! Je suis l'assistant Clearzen. Comment puis-je vous aider aujourd'hui ?</p>
+                        <p class="text-sm text-gray-700 leading-relaxed">Bonjour ! Je suis l'assistant Clearzen. Comment puis-je vous aider aujourd'hui ?</p>
                     </div>
                 </div>
             </div>
 
             <!-- Input Area -->
             <form id="chat-form" class="p-4 bg-white border-t border-gray-100 flex gap-2">
-                <input type="text" id="chat-input" placeholder="Posez votre question..." class="flex-1 bg-gray-100 border-none rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-[#1B365D]/20 transition-all outline-none" autocomplete="off" data-i18n-placeholder="chatbot_placeholder">
+                <input type="text" id="chat-input" placeholder="Posez votre question..." class="flex-1 bg-gray-100 border-none rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-[#1B365D]/20 transition-all outline-none" autocomplete="off">
                 <button type="submit" class="bg-[#1B365D] text-white p-2 rounded-xl hover:bg-[#1B365D]/90 transition-all shadow-lg shadow-[#1B365D]/20 active:scale-95">
                     <i data-lucide="send" size="18"></i>
                 </button>
