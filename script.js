@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
             }, 500);
-        }, 1500);
+        }, 800); // Reduced from 1500ms for faster mobile feel
     }
 
     // 1b. Scroll Progress Bar
@@ -54,26 +54,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // 2a. Background, Padding and Logo Scale Transition
-        const isScrolled = currentScroll > CONFIG.SCROLL_THRESHOLD_NAV;
-        if (navbar.classList.contains('navbar-scrolled') !== isScrolled) {
-            navbar.classList.toggle('navbar-scrolled', isScrolled);
-            navbar.classList.toggle('py-3', isScrolled);
-            navbar.classList.toggle('py-6', !isScrolled);
-            if (navLogo) navLogo.style.transform = isScrolled ? 'scale(0.92)' : 'scale(1)';
-        }
-        
-        // Show/Hide Mobile Taskbar
-        if (mobileTaskbar) {
-            const shouldShowTaskbar = currentScroll > CONFIG.SCROLL_THRESHOLD_TASKBAR;
-            if (mobileTaskbar.classList.contains('opacity-100') !== shouldShowTaskbar) {
-                mobileTaskbar.classList.toggle('translate-y-0', shouldShowTaskbar);
-                mobileTaskbar.classList.toggle('opacity-100', shouldShowTaskbar);
-                mobileTaskbar.classList.toggle('translate-y-20', !shouldShowTaskbar);
-                mobileTaskbar.classList.toggle('opacity-0', !shouldShowTaskbar);
+        if (currentScroll > CONFIG.SCROLL_THRESHOLD_NAV) {
+            navbar.classList.add('navbar-scrolled');
+            navbar.classList.remove('py-3', 'md:py-6');
+            navbar.classList.add('py-2');
+            if (navLogo) navLogo.style.transform = 'scale(0.92)';
+            
+            // Show Mobile Taskbar
+            if (mobileTaskbar) {
+                mobileTaskbar.classList.remove('translate-y-20', 'opacity-0');
+                mobileTaskbar.classList.add('translate-y-0', 'opacity-100');
+            }
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+            navbar.classList.remove('py-2');
+            navbar.classList.add('py-3', 'md:py-6');
+            if (navLogo) navLogo.style.transform = 'scale(1)';
+
+            // Hide Mobile Taskbar near top
+            if (mobileTaskbar) {
+                mobileTaskbar.classList.add('translate-y-20', 'opacity-0');
+                mobileTaskbar.classList.remove('translate-y-0', 'opacity-100');
             }
         }
 
         // 2b. Navbar Appearance Transition (Sticky & Persistent)
+        // We removed the hide-on-scroll-down logic to keep it sticky as requested.
         navbar.style.transform = 'translateY(0)';
         if (progressBar) progressBar.style.transform = 'translateY(0)';
         
@@ -108,11 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const updateLinkState = (links) => {
                 links.forEach(link => {
                     const isActive = link.getAttribute('href') === '#home';
-                    if (link.classList.contains('active-nav-link') !== isActive) {
-                        link.classList.toggle('active-nav-link', isActive);
-                        if (isActive) link.setAttribute('aria-current', 'page');
-                        else link.removeAttribute('aria-current');
-                    }
+                    link.classList.toggle('active-nav-link', isActive);
+                    if (isActive) link.setAttribute('aria-current', 'page');
+                    else link.removeAttribute('aria-current');
                 });
             };
             updateLinkState(navLinks);
@@ -128,13 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const updateLinkState = (links) => {
                     links.forEach(link => {
                         const isActive = link.getAttribute('href') === `#${id}`;
-                        if (link.classList.contains('active-nav-link') !== isActive) {
-                            link.classList.toggle('active-nav-link', isActive);
-                            if (isActive) {
-                                link.setAttribute('aria-current', 'page');
-                            } else {
-                                link.removeAttribute('aria-current');
-                            }
+                        link.classList.toggle('active-nav-link', isActive);
+                        if (isActive) {
+                            link.setAttribute('aria-current', 'page');
+                        } else {
+                            link.removeAttribute('aria-current');
                         }
                     });
                 };
@@ -280,6 +282,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 6. FAQ Accordion
+    // Since FAQ is injected by JS in React version but hardcoded here, we need to handle it differently if it's hardcoded.
+    // Let's assume it's hardcoded in index.html now.
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const button = item.querySelector('button');
@@ -294,18 +298,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 faqItems.forEach(otherItem => {
                     const otherContent = otherItem.querySelector('.faq-content');
                     const otherIcon = otherItem.querySelector('.faq-icon');
-                    const otherButton = otherItem.querySelector('button');
                     if (otherContent) otherContent.classList.add('hidden');
                     if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-                    if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
                 });
 
                 if (!isOpen) {
                     content.classList.remove('hidden');
                     icon.style.transform = 'rotate(180deg)';
-                    button.setAttribute('aria-expanded', 'true');
-                } else {
-                    button.setAttribute('aria-expanded', 'false');
                 }
             });
         }
@@ -647,33 +646,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeChat) closeChat.addEventListener('click', toggleChat);
 
     // Advanced System Parameters
-    const SYSTEM_INSTRUCTION = `You are the expert hearing assistant for Clearzen Casablanca.
-    
-    TONE: Professional, empathetic, reassuring, and high-end.
-    CONTEXT: Clearzen is the leader in hearing aids in Casablanca, Morocco.
-    
-    SERVICES:
-    - Complete and FREE hearing assessment (Bilan auditif).
-    - Invisible and high-tech hearing aids (global brands like Signia, Starkey, Phonak, Widex, Oticon, Resound).
-    - 30-day free trial with no obligation.
-    - Unlimited follow-up and 4-year warranty.
-    
-    PRACTICAL INFO:
-    - Address: 5 rue Chatila, Quartier Palmier, Casablanca.
-    - Hours: Mon-Fri (09:00-18:30), Sat (09:00-13:00).
-    - Contact: 05 20 14 42 62 / WhatsApp: 06 23 86 17 93.
-    
-    RESPONSE ALGORITHM:
-    1. LANGUAGE: Respond in the SAME language as the user (French or English).
-    2. CALL TO ACTION: If the user mentions hearing loss or difficulty, ALWAYS suggest the free assessment.
-    3. PRICING: If asked about price, explain it depends on the assessment but solutions start with a free trial.
-    4. CONCISENESS: Be concise (max 3 sentences). Use 'vous' in French.
-    5. UNCERTAINTY: If you don't know, invite them to call the center or visit.
-    6. FAQ:
-       - Duration: 45 minutes for a full assessment.
-       - Visibility: We have 100% invisible models.
-       - Payment: Up to 12 installments with no fees.
-    `;
+    const SYSTEM_INSTRUCTION = `Tu es l'expert en audition de Clearzen Casablanca. 
+    TON : Professionnel, empathique, rassurant et haut de gamme.
+    CONTEXTE : Clearzen est le leader de l'audioprothèse à Casablanca.
+    SERVICES : 
+    - Bilan auditif complet et GRATUIT.
+    - Appareillage invisible et haute technologie (marques mondiales).
+    - Essai gratuit de 30 jours sans engagement.
+    - Suivi illimité et garantie 4 ans.
+    INFOS PRATIQUES :
+    - Adresse : 5 rue Chatila, Quartier Palmier, Casablanca.
+    - Horaires : Lun-Ven (09:00-18:30), Sam (09:00-13:00).
+    - Contact : 05 20 14 42 62 / WhatsApp : 06 23 86 17 93.
+    ALGORITHME DE RÉPONSE :
+    1. Si l'utilisateur parle de perte d'audition, propose TOUJOURS le bilan gratuit.
+    2. Si l'utilisateur demande un prix, explique que cela dépend du bilan mais que les solutions commencent par un essai gratuit.
+    3. Sois concis (max 3 phrases). Utilise le 'vous'.
+    4. Si tu ne sais pas, invite à appeler le centre.`;
 
     const addMessage = (text, isUser = false) => {
         const messageDiv = document.createElement('div');
@@ -756,555 +745,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (chatForm) chatForm.addEventListener('submit', handleChatSubmit);
-
-    // 10. Language Switching Logic
-    const translations = {
-        fr: {
-            nav_home: "Accueil",
-            nav_mission: "Notre Mission",
-            nav_services: "Services",
-            nav_solutions: "Solutions",
-            nav_engagements: "Engagements",
-            nav_team: "Équipe",
-            nav_contact: "Contact",
-            nav_appointment: "Prendre RDV",
-            nav_call: '<i data-lucide="phone" size="18" class="mr-3"></i> Appeler',
-            hero_badge: "Expertise Auditive Premium à Casablanca",
-            hero_title: "Votre audition, <br><span class=\"text-accent italic\">notre priorité.</span>",
-            hero_subtitle: "Clearzen Audition vous accompagne vers une meilleure qualité de vie avec une prise en charge complète, précise et profondément humaine.",
-            hero_cta_test: 'Bilan Auditif Gratuit <i data-lucide="activity" class="ml-2 group-hover:animate-pulse transition-transform"></i>',
-            hero_stats: "93% de satisfaction patient",
-            footer_copyright: "&copy; 2026 Clearzen Audition. Tous droits réservés.",
-            footer_nav_title: "Navigation",
-            footer_openings_title: "Ouvertures 2026",
-            footer_follow_title: "Suivez-nous",
-            // Mission
-            mission_badge: "Notre Mission",
-            mission_title: "Redonner vie à vos sens.",
-            mission_vision_label: "Notre Vision",
-            mission_vision_text: "Une approche holistique de l'audition.",
-            mission_description: "Chez Clearzen, nous croyons que bien entendre est essentiel pour rester connecté au monde. Nous combinons expertise médicale et technologies de pointe pour vous offrir une solution sur mesure.",
-            mission_trust_label: "Confiance",
-            mission_trust_count: "5000+",
-            mission_trust_quote: "\"Une expertise qui change la vie.\"",
-            // Engagements
-            engagements_badge: "Nos Engagements",
-            engagements_title: "L'excellence au service de votre audition.",
-            engagement_1: "Expertise Médicale",
-            engagement_2: "Technologie de Pointe",
-            engagement_3: "Accompagnement Humain",
-            engagement_4: "Suivi Illimité",
-            engagement_5: "Transparence Totale",
-            engagement_6: "Innovation Continue",
-            // Values
-            valeurs_badge: "L'Esprit Clearzen",
-            valeurs_title: "Nos Valeurs Fondamentales",
-            valeur_1_title: "Expertise",
-            valeur_1_text: "Excellence audiologique et méthodes internationales.",
-            valeur_2_title: "Humanité",
-            valeur_2_text: "Écoute, douceur, empathie et respect.",
-            valeur_3_title: "Transparence",
-            valeur_3_text: "Clarté totale sur les choix et les solutions.",
-            valeur_4_title: "Modernité",
-            valeur_4_text: "Appareils discrets, rechargeables et connectés.",
-            valeur_5_title: "Éthique",
-            valeur_5_text: "Des conseils honnêtes et transparents.",
-            valeur_6_title: "Qualité",
-            valeur_6_text: "Sélection rigoureuse des meilleurs fabricants mondiaux.",
-            valeur_7_title: "Passion",
-            valeur_7_text: "Dévouement total pour améliorer votre quotidien.",
-            valeur_8_title: "Excellence",
-            valeur_8_text: "Standard de soin supérieur pour chaque patient.",
-            // Education
-            education_badge: "Comprendre l'Audition",
-            education_title: "Votre audition est précieuse.",
-            education_description: "La perte auditive peut impacter votre vie sociale et cognitive. Agir tôt, c'est préserver votre capital santé.",
-            education_point_1_title: "Impact Social",
-            education_point_1_text: "Évitez l'isolement et restez connecté à vos proches.",
-            education_point_2_title: "Santé Cognitive",
-            education_point_2_text: "Stimulez votre cerveau pour prévenir le déclin cognitif.",
-            // Services
-            services_badge: "Nos Services",
-            services_title: "Une prise en charge complète.",
-            services_subtitle: "De la prévention à l'appareillage de haute technologie.",
-            service_1_title: "Bilan Auditif Complet",
-            service_1_text: "Tests audiométriques précis réalisés par nos experts.",
-            service_1_tag_1: "Gratuit",
-            service_1_tag_2: "45 min",
-            service_2_title: "Appareillage Sur-Mesure",
-            service_2_text: "Sélection et adaptation de la solution idéale pour vous.",
-            service_2_tag_1: "Invisible",
-            service_2_tag_2: "Bluetooth",
-            service_3_title: "Suivi & Réglages",
-            service_3_text: "Ajustements réguliers pour une performance optimale.",
-            service_3_tag_1: "Illimité",
-            service_3_tag_2: "À vie",
-            service_4_title: "Entretien & Réparation",
-            service_4_text: "Maintenance de vos appareils toutes marques.",
-            service_4_tag_1: "Rapide",
-            service_4_tag_2: "Expert",
-            service_5_title: "Accessoires Connectés",
-            service_5_text: "Solutions pour TV, téléphone et environnements bruyants.",
-            service_5_tag_1: "Smart",
-            service_5_tag_2: "Confort",
-            // Stats
-            stats_1: "Amélioration de la compréhension",
-            stats_2: "Suivi personnalisé & illimité",
-            stats_3: "Pression commerciale",
-            stats_4: "Ouvertures : Marrakech, Agadir, Rabat...",
-            // Brands
-            brands_title: "Partenaires Technologiques Mondiaux",
-            brands_desc: "Nous travaillons exclusivement avec les leaders mondiaux de l'audioprothèse pour vous garantir une technologie de pointe et une fiabilité absolue.",
-            // Products
-            products_badge: "Nos Solutions",
-            products_title: 'Une technologie adaptée à <span class="text-accent italic">chaque besoin.</span>',
-            products_tag_1: "Bienveillant",
-            products_tag_2: "Intelligent",
-            products_tag_3: "Serein",
-            products_desc: "Nous sélectionnons les meilleures aides auditives du marché pour garantir discrétion, puissance et confort.",
-            product_1_badge: "Puissant & Robuste",
-            product_1_title: "Contours d’oreille (BTE)",
-            product_1_desc: "Idéal pour les pertes sévères à profondes. Manipulation facile et grande autonomie.",
-            product_benefits_label: "Avantages",
-            product_1_benefit_1: "Puissance",
-            product_1_benefit_2: "Robustesse",
-            product_1_benefit_3: "Autonomie",
-            product_1_benefit_4: "Facilité",
-            product_for_whom_label: "Pour qui ?",
-            product_1_for_whom: "Pertes sévères à profondes, besoin de manipulation simplifiée.",
-            product_2_badge: "Le plus populaire",
-            product_2_title: "Micro-contours (RIC)",
-            product_2_desc: "Discrétion maximale et son naturel. Parfait pour les personnes actives.",
-            product_2_benefit_1: "Discrétion",
-            product_2_benefit_2: "Son Naturel",
-            product_2_benefit_3: "Confort",
-            product_2_benefit_4: "Bluetooth",
-            product_2_for_whom: "Pertes légères à sévères, personnes actives, premier appareillage.",
-            product_3_badge: "100% Invisible",
-            product_3_title: "Intra-auriculaires (ITE/CIC)",
-            product_3_desc: "Moulés sur mesure pour se loger directement dans votre conduit auditif.",
-            product_3_benefit_1: "Invisibilité",
-            product_3_benefit_2: "Son Naturel",
-            product_3_benefit_3: "Sur-mesure",
-            product_3_benefit_4: "Discrétion",
-            product_3_for_whom: "Pertes légères à moyennes, discrétion absolue recherchée.",
-            // Team
-            team_badge: "Notre Équipe",
-            team_title: "Des experts à votre écoute.",
-            team_desc: "Nos audioprothésistes diplômés vous accompagnent avec expertise et bienveillance pour vous offrir la meilleure expérience auditive.",
-            team_1_quote: "\"Votre confort est ma priorité absolue.\"",
-            team_1_name: "Dr. Sarah Mansouri",
-            team_1_role: "Audioprothésiste D.E.",
-            team_1_desc: "Spécialiste en appareillage pédiatrique et acouphènes.",
-            team_2_quote: "\"La technologie au service de l'humain.\"",
-            team_2_name: "M. Yassine Benani",
-            team_2_role: "Audioprothésiste D.E.",
-            team_2_desc: "Expert en solutions connectées et réglages de haute précision.",
-            team_3_quote: "\"Un accueil chaleureux pour chaque patient.\"",
-            team_3_name: "Mme. Leila Kadiri",
-            team_3_role: "Responsable Accueil",
-            team_3_desc: "À votre disposition pour toute question administrative et prise de rendez-vous.",
-            // Process
-            process_badge: "Le Parcours",
-            process_title: "Votre retour à une audition claire en 4 étapes.",
-            process_step_1_title: "Consultation & Bilan",
-            process_step_1_desc: "Échange sur vos besoins et réalisation d'un test auditif complet gratuit.",
-            process_step_2_title: "Essai Gratuit",
-            process_step_2_desc: "Testez vos aides auditives dans votre environnement réel pendant 30 jours.",
-            process_step_3_title: "Adaptation",
-            process_step_3_desc: "Réglages fins et personnalisés pour un confort d'écoute optimal.",
-            process_step_4_title: "Suivi Illimité",
-            process_step_4_desc: "Accompagnement à vie pour l'entretien et l'ajustement de vos appareils.",
-            // FAQ
-            faq_badge: "FAQ",
-            faq_title: "Questions Fréquentes",
-            faq_q1: "Combien de temps dure un bilan auditif ?",
-            faq_a1: "Un bilan auditif complet dure environ 45 minutes. Il comprend une anamnèse, une otoscopie et des tests audiométriques précis pour évaluer votre audition.",
-            faq_q2: "Les appareils auditifs sont-ils vraiment visibles ?",
-            faq_a2: "Aujourd'hui, la technologie permet une discrétion absolue. Nous proposons des modèles intra-auriculaires totalement invisibles qui se logent au fond du conduit auditif.",
-            faq_q3: "Quelles sont les garanties sur les appareils ?",
-            faq_a3: "Tous nos appareils auditifs bénéficient d'une garantie constructeur de 4 ans couvrant les pannes et les défauts de fabrication.",
-            faq_q4: "Proposez-vous des facilités de paiement ?",
-            faq_a4: "Oui, nous proposons des solutions de financement flexibles, incluant le paiement jusqu'à 12 fois sans frais pour faciliter l'accès à une meilleure audition.",
-            // Contact
-            contact_phone_label: "Téléphone",
-            contact_mobile_label: "Mobile : 06 23 86 17 93",
-            contact_hours_label: "Horaires",
-            contact_hours_value: "Lun - Ven : 09:00 - 18:30<br />Sam : 09:00 - 13:00",
-            contact_form_title: "Demander un rappel",
-            contact_form_name_label: "Nom Complet",
-            contact_form_name_placeholder: "Votre nom",
-            contact_form_phone_label: "Téléphone",
-            contact_form_phone_placeholder: "06 XX XX XX XX",
-            contact_form_subject_label: "Sujet",
-            contact_form_opt_1: "Bilan auditif gratuit",
-            contact_form_opt_2: "Réparation appareil",
-            contact_form_opt_3: "Information remboursement",
-            contact_form_opt_4: "Autre",
-            contact_form_submit: "Envoyer ma demande",
-            contact_form_success_title: "Demande Envoyée !",
-            contact_form_success_desc: "Nous vous rappellerons très prochainement.",
-            footer_desc: "Votre centre d'excellence auditive à Casablanca. Nous allions expertise médicale, technologies de pointe et accompagnement personnalisé pour redonner vie à vos sens.",
-            // Test Modal
-            test_intro_title: "Évaluez votre audition en 30 secondes.",
-            test_intro_desc: "Répondez à quelques questions simples pour obtenir une première évaluation de votre santé auditive.",
-            test_intro_btn: "Commencer le test",
-            test_q1_label: "Question 1/3",
-            test_q1_title: "Avez-vous du mal à suivre une conversation dans un environnement bruyant ?",
-            test_q1_opt_1: "Oui, souvent",
-            test_q1_opt_2: "Parfois",
-            test_q1_opt_3: "Non, jamais",
-            test_q2_label: "Question 2/3",
-            test_q2_title: "Vos proches remarquent-ils que vous montez trop fort le volume de la télévision ?",
-            test_q2_opt_1: "Oui, régulièrement",
-            test_q2_opt_2: "De temps en temps",
-            test_q2_opt_3: "Non",
-            test_q3_label: "Question 3/3",
-            test_q3_title: "Ressentez-vous des sifflements ou des bourdonnements dans vos oreilles ?",
-            test_q3_opt_1: "Oui, souvent",
-            test_q3_opt_2: "Rarement",
-            test_q3_opt_3: "Non",
-            test_result_title: "Test terminé !",
-            test_result_desc: "Votre profil suggère qu'un bilan complet serait bénéfique. Laissez vos coordonnées pour être rappelé par un expert.",
-            test_form_name_placeholder: "Votre nom complet",
-            test_form_phone_placeholder: "Votre numéro de téléphone",
-            test_form_submit: "Demander mon bilan gratuit",
-            test_success_title: "C'est noté !",
-            test_success_desc: "Un audioprothésiste Clearzen vous contactera dans les plus brefs délais pour fixer votre rendez-vous.",
-            // Popups
-            popup_special_offer: "Offre Spéciale",
-            popup_title: "Votre bilan auditif est offert !",
-            popup_desc: "Prenez rendez-vous aujourd'hui pour un test complet gratuit.",
-            popup_cta: "Prendre RDV",
-            exit_popup_title: "Ne partez pas si vite !",
-            exit_popup_desc: "Profitez d'une remise de 10% sur vos accessoires pour votre première visite.",
-            exit_popup_cta: "En profiter maintenant",
-            scroll_popup_title: "Besoin d'aide ?",
-            scroll_popup_desc: "Nos experts sont disponibles pour répondre à vos questions.",
-            scroll_popup_call: "Appeler",
-            // Chatbot
-            chatbot_name: "Assistant Clearzen",
-            chatbot_status: "En ligne",
-            chatbot_welcome: "Bonjour ! Je suis l'assistant Clearzen. Comment puis-je vous aider aujourd'hui ?",
-            chatbot_placeholder: "Posez votre question...",
-            // Cookie Banner
-            cookie_title: "Respect de votre vie privée",
-            cookie_desc: "Nous utilisons des cookies pour améliorer votre expérience, analyser le trafic et personnaliser le contenu. En continuant à naviguer, vous acceptez notre utilisation des cookies.",
-            cookie_accept: "Accepter",
-            cookie_decline: "Refuser",
-            // Mobile Taskbar
-            taskbar_home: "Accueil",
-            taskbar_services: "Services",
-            taskbar_whatsapp: "WhatsApp",
-            taskbar_menu: "Menu",
-            // Floating WhatsApp
-            whatsapp_float_text: "Besoin d'aide ? Discutons !"
-        },
-        en: {
-            nav_home: "Home",
-            nav_mission: "Our Mission",
-            nav_services: "Services",
-            nav_solutions: "Solutions",
-            nav_engagements: "Commitments",
-            nav_team: "Team",
-            nav_contact: "Contact",
-            nav_appointment: "Book Appointment",
-            nav_call: '<i data-lucide="phone" size="18" class="mr-3"></i> Call',
-            hero_badge: "Premium Audiology Expertise in Casablanca",
-            hero_title: "Your hearing, <br><span class=\"text-accent italic\">our priority.</span>",
-            hero_subtitle: "Clearzen Audition accompanies you towards a better quality of life with complete, precise, and deeply human care.",
-            hero_cta_test: 'Free Hearing Test <i data-lucide="activity" class="ml-2 group-hover:animate-pulse transition-transform"></i>',
-            hero_stats: "93% patient satisfaction",
-            footer_copyright: "&copy; 2026 Clearzen Audition. All rights reserved.",
-            footer_nav_title: "Navigation",
-            footer_openings_title: "2026 Openings",
-            footer_follow_title: "Follow Us",
-            // Mission
-            mission_badge: "Our Mission",
-            mission_title: "Bringing your senses back to life.",
-            mission_vision_label: "Our Vision",
-            mission_vision_text: "A holistic approach to hearing.",
-            mission_description: "At Clearzen, we believe that hearing well is essential to staying connected to the world. We combine medical expertise and cutting-edge technology to offer you a tailor-made solution.",
-            mission_trust_label: "Trust",
-            mission_trust_count: "5000+",
-            mission_trust_quote: "\"Life-changing expertise.\"",
-            // Engagements
-            engagements_badge: "Our Commitments",
-            engagements_title: "Excellence at the service of your hearing.",
-            engagement_1: "Medical Expertise",
-            engagement_2: "Cutting-Edge Technology",
-            engagement_3: "Human Support",
-            engagement_4: "Unlimited Follow-up",
-            engagement_5: "Total Transparency",
-            engagement_6: "Continuous Innovation",
-            // Values
-            valeurs_badge: "The Clearzen Spirit",
-            valeurs_title: "Our Core Values",
-            valeur_1_title: "Expertise",
-            valeur_1_text: "Audiological excellence and international methods.",
-            valeur_2_title: "Humanity",
-            valeur_2_text: "Listening, gentleness, empathy, and respect.",
-            valeur_3_title: "Transparency",
-            valeur_3_text: "Total clarity on choices and solutions.",
-            valeur_4_title: "Modernity",
-            valeur_4_text: "Discreet, rechargeable, and connected devices.",
-            valeur_5_title: "Ethics",
-            valeur_5_text: "Honest and transparent advice.",
-            valeur_6_title: "Quality",
-            valeur_6_text: "Rigorous selection of the best global manufacturers.",
-            valeur_7_title: "Passion",
-            valeur_7_text: "Total dedication to improving your daily life.",
-            valeur_8_title: "Excellence",
-            valeur_8_text: "Superior standard of care for every patient.",
-            // Education
-            education_badge: "Understanding Hearing",
-            education_title: "Your hearing is precious.",
-            education_description: "Hearing loss can impact your social and cognitive life. Acting early means preserving your health capital.",
-            education_point_1_title: "Social Impact",
-            education_point_1_text: "Avoid isolation and stay connected to your loved ones.",
-            education_point_2_title: "Cognitive Health",
-            education_point_2_text: "Stimulate your brain to prevent cognitive decline.",
-            // Services
-            services_badge: "Our Services",
-            services_title: "Complete care.",
-            services_subtitle: "From prevention to high-tech hearing aids.",
-            service_1_title: "Complete Hearing Assessment",
-            service_1_text: "Precise audiometric tests carried out by our experts.",
-            service_1_tag_1: "Free",
-            service_1_tag_2: "45 min",
-            service_2_title: "Custom Hearing Aids",
-            service_2_text: "Selection and adaptation of the ideal solution for you.",
-            service_2_tag_1: "Invisible",
-            service_2_tag_2: "Bluetooth",
-            service_3_title: "Follow-up & Adjustments",
-            service_3_text: "Regular adjustments for optimal performance.",
-            service_3_tag_1: "Unlimited",
-            service_3_tag_2: "Lifetime",
-            service_4_title: "Maintenance & Repair",
-            service_4_text: "Maintenance of your hearing aids of all brands.",
-            service_4_tag_1: "Fast",
-            service_4_tag_2: "Expert",
-            service_5_title: "Connected Accessories",
-            service_5_text: "Solutions for TV, telephone, and noisy environments.",
-            service_5_tag_1: "Smart",
-            service_5_tag_2: "Comfort",
-            // Stats
-            stats_1: "Improvement in understanding",
-            stats_2: "Personalized & unlimited follow-up",
-            stats_3: "Commercial pressure",
-            stats_4: "Openings: Marrakech, Agadir, Rabat...",
-            // Brands
-            brands_title: "Global Technology Partners",
-            brands_desc: "We work exclusively with the world leaders in hearing aids to guarantee you cutting-edge technology and absolute reliability.",
-            // Products
-            products_badge: "Our Solutions",
-            products_title: 'Technology adapted to <span class="text-accent italic">every need.</span>',
-            products_tag_1: "Caring",
-            products_tag_2: "Intelligent",
-            products_tag_3: "Serene",
-            products_desc: "We select the best hearing aids on the market to guarantee discretion, power, and comfort.",
-            product_1_badge: "Powerful & Robust",
-            product_1_title: "Behind-the-Ear (BTE)",
-            product_1_desc: "Ideal for severe to profound losses. Easy handling and long battery life.",
-            product_benefits_label: "Advantages",
-            product_1_benefit_1: "Power",
-            product_1_benefit_2: "Robustness",
-            product_1_benefit_3: "Autonomy",
-            product_1_benefit_4: "Ease",
-            product_for_whom_label: "For whom?",
-            product_1_for_whom: "Severe to profound losses, need for simplified handling.",
-            product_2_badge: "Most popular",
-            product_2_title: "Receiver-in-Canal (RIC)",
-            product_2_desc: "Maximum discretion and natural sound. Perfect for active people.",
-            product_2_benefit_1: "Discretion",
-            product_2_benefit_2: "Natural Sound",
-            product_2_benefit_3: "Comfort",
-            product_2_benefit_4: "Bluetooth",
-            product_2_for_whom: "Mild to severe losses, active people, first fitting.",
-            product_3_badge: "100% Invisible",
-            product_3_title: "In-the-Ear (ITE/CIC)",
-            product_3_desc: "Custom-molded to fit directly into your ear canal.",
-            product_3_benefit_1: "Invisibility",
-            product_3_benefit_2: "Natural Sound",
-            product_3_benefit_3: "Custom-made",
-            product_3_benefit_4: "Discretion",
-            product_3_for_whom: "Mild to moderate losses, absolute discretion sought.",
-            // Team
-            team_badge: "Our Team",
-            team_title: "Experts at your service.",
-            team_desc: "Our qualified audiologists accompany you with expertise and kindness to offer you the best hearing experience.",
-            team_1_quote: "\"Your comfort is my absolute priority.\"",
-            team_1_name: "Dr. Sarah Mansouri",
-            team_1_role: "Audiologist D.E.",
-            team_1_desc: "Specialist in pediatric fitting and tinnitus.",
-            team_2_quote: "\"Technology at the service of humans.\"",
-            team_2_name: "M. Yassine Benani",
-            team_2_role: "Audiologist D.E.",
-            team_2_desc: "Expert in connected solutions and high-precision adjustments.",
-            team_3_quote: "\"A warm welcome for every patient.\"",
-            team_3_name: "Mme. Leila Kadiri",
-            team_3_role: "Reception Manager",
-            team_3_desc: "At your disposal for any administrative questions and appointments.",
-            // Process
-            process_badge: "The Journey",
-            process_title: "Your return to clear hearing in 4 steps.",
-            process_step_1_title: "Consultation & Assessment",
-            process_step_1_desc: "Discussion about your needs and realization of a free complete hearing test.",
-            process_step_2_title: "Free Trial",
-            process_step_2_desc: "Test your hearing aids in your real environment for 30 days.",
-            process_step_3_title: "Adaptation",
-            process_step_3_desc: "Fine and personalized adjustments for optimal listening comfort.",
-            process_step_4_title: "Unlimited Follow-up",
-            process_step_4_desc: "Lifetime support for the maintenance and adjustment of your devices.",
-            // FAQ
-            faq_badge: "FAQ",
-            faq_title: "Frequently Asked Questions",
-            faq_q1: "How long does a hearing assessment take?",
-            faq_a1: "A complete hearing assessment takes about 45 minutes. It includes a history, an otoscopy, and precise audiometric tests to evaluate your hearing.",
-            faq_q2: "Are hearing aids really visible?",
-            faq_a2: "Today, technology allows for absolute discretion. We offer totally invisible in-the-ear models that fit deep in the ear canal.",
-            faq_q3: "What are the guarantees on the devices?",
-            faq_a3: "All our hearing aids benefit from a 4-year manufacturer's warranty covering breakdowns and manufacturing defects.",
-            faq_q4: "Do you offer payment facilities?",
-            faq_a4: "Yes, we offer flexible financing solutions, including payment in up to 12 installments without fees to facilitate access to better hearing.",
-            // Contact
-            contact_phone_label: "Phone",
-            contact_mobile_label: "Mobile: 06 23 86 17 93",
-            contact_hours_label: "Hours",
-            contact_hours_value: "Mon - Fri: 09:00 - 18:30<br />Sat: 09:00 - 13:00",
-            contact_form_title: "Request a callback",
-            contact_form_name_label: "Full Name",
-            contact_form_name_placeholder: "Your name",
-            contact_form_phone_label: "Phone",
-            contact_form_phone_placeholder: "06 XX XX XX XX",
-            contact_form_subject_label: "Subject",
-            contact_form_opt_1: "Free hearing test",
-            contact_form_opt_2: "Device repair",
-            contact_form_opt_3: "Reimbursement information",
-            contact_form_opt_4: "Other",
-            contact_form_submit: "Send my request",
-            contact_form_success_title: "Request Sent!",
-            contact_form_success_desc: "We will call you back very soon.",
-            footer_desc: "Your center of hearing excellence in Casablanca. We combine medical expertise, cutting-edge technologies, and personalized support to bring your senses back to life.",
-            // Test Modal
-            test_intro_title: "Assess your hearing in 30 seconds.",
-            test_intro_desc: "Answer a few simple questions to get an initial assessment of your hearing health.",
-            test_intro_btn: "Start the test",
-            test_q1_label: "Question 1/3",
-            test_q1_title: "Do you have trouble following a conversation in a noisy environment?",
-            test_q1_opt_1: "Yes, often",
-            test_q1_opt_2: "Sometimes",
-            test_q1_opt_3: "No, never",
-            test_q2_label: "Question 2/3",
-            test_q2_title: "Do your loved ones notice that you turn up the TV volume too high?",
-            test_q2_opt_1: "Yes, regularly",
-            test_q2_opt_2: "From time to time",
-            test_q2_opt_3: "No",
-            test_q3_label: "Question 3/3",
-            test_q3_title: "Do you experience ringing or buzzing in your ears?",
-            test_q3_opt_1: "Yes, often",
-            test_q3_opt_2: "Rarely",
-            test_q3_opt_3: "No",
-            test_result_title: "Test completed!",
-            test_result_desc: "Your profile suggests that a full assessment would be beneficial. Leave your details to be called back by an expert.",
-            test_form_name_placeholder: "Your full name",
-            test_form_phone_placeholder: "Your phone number",
-            test_form_submit: "Request my free assessment",
-            test_success_title: "Noted!",
-            test_success_desc: "A Clearzen hearing aid specialist will contact you as soon as possible to schedule your appointment.",
-            // Popups
-            popup_special_offer: "Special Offer",
-            popup_title: "Your hearing assessment is free!",
-            popup_desc: "Book an appointment today for a full free test.",
-            popup_cta: "Book Appointment",
-            exit_popup_title: "Don't leave so soon!",
-            exit_popup_desc: "Enjoy a 10% discount on your accessories for your first visit.",
-            exit_popup_cta: "Enjoy now",
-            scroll_popup_title: "Need help?",
-            scroll_popup_desc: "Our experts are available to answer your questions.",
-            scroll_popup_call: "Call",
-            // Chatbot
-            chatbot_name: "Clearzen Assistant",
-            chatbot_status: "Online",
-            chatbot_welcome: "Hello! I am the Clearzen assistant. How can I help you today?",
-            chatbot_placeholder: "Ask your question...",
-            // Cookie Banner
-            cookie_title: "Respect for your privacy",
-            cookie_desc: "We use cookies to improve your experience, analyze traffic, and personalize content. By continuing to browse, you accept our use of cookies.",
-            cookie_accept: "Accept",
-            cookie_decline: "Decline",
-            // Mobile Taskbar
-            taskbar_home: "Home",
-            taskbar_services: "Services",
-            taskbar_whatsapp: "WhatsApp",
-            taskbar_menu: "Menu",
-            // Floating WhatsApp
-            whatsapp_float_text: "Need help? Let's chat!"
-        }
-    };
-
-    window.setLanguage = (lang) => {
-        localStorage.setItem('preferred_language', lang);
-        applyTranslations(lang);
-        // Optional: reload to ensure all dynamic elements are updated if needed
-        // window.location.reload(); 
-    };
-
-    const applyTranslations = (lang) => {
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[lang] && translations[lang][key]) {
-                el.innerHTML = translations[lang][key];
-            }
-        });
-
-        const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
-        placeholders.forEach(el => {
-            const key = el.getAttribute('data-i18n-placeholder');
-            if (translations[lang] && translations[lang][key]) {
-                el.placeholder = translations[lang][key];
-            }
-        });
-
-        // Update active state of language buttons
-        document.querySelectorAll('.lang-btn-fr, .lang-btn-fr-mobile, .lang-btn-fr-footer').forEach(btn => {
-            btn.classList.toggle('text-white', lang === 'fr');
-            btn.classList.toggle('text-white/50', lang !== 'fr');
-            btn.classList.toggle('bg-white/10', lang === 'fr');
-        });
-        document.querySelectorAll('.lang-btn-en, .lang-btn-en-mobile, .lang-btn-en-footer').forEach(btn => {
-            btn.classList.toggle('text-white', lang === 'en');
-            btn.classList.toggle('text-white/50', lang !== 'en');
-            btn.classList.toggle('bg-white/10', lang === 'en');
-        });
-
-        // Re-initialize icons for translated elements
-        if (window.lucide) window.lucide.createIcons();
-    };
-
-    // 12. Lazy Loading for Background Images and Images
-    const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const lazyImage = entry.target;
-                if (lazyImage.dataset.src) {
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.removeAttribute('data-src');
-                }
-                if (lazyImage.dataset.bg) {
-                    lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`;
-                    lazyImage.removeAttribute('data-bg');
-                }
-                lazyImage.classList.remove('lazy');
-                observer.unobserve(lazyImage);
-            }
-        });
-    });
-
-    document.querySelectorAll('.lazy').forEach(img => lazyImageObserver.observe(img));
-
-    // Initialize language
-    const savedLang = localStorage.getItem('preferred_language') || 'fr';
-    applyTranslations(savedLang);
 });
+
