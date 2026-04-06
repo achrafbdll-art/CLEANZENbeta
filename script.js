@@ -1,647 +1,432 @@
-/* CLEARZEN Classic Version - script.js */
+:root {
+    --accent: #E31E24;
+    --primary: #1B365D;
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lucide Icons
-    if (window.lucide) {
-        window.lucide.createIcons();
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Styles for CLEARZEN Classic Version */
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+}
+
+@keyframes backgroundScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 300px 300px; }
+}
+
+.animate-bg-scroll {
+    animation: backgroundScroll 20s linear infinite;
+}
+
+.zellig-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(-15 75 75)'%3E%3Cpath d='M40 55a30 30 0 1 1 60 0c0 28-28 28-28 48a12 12 0 1 1-24 0' fill='none' stroke='%2300B4D8' stroke-width='6' stroke-opacity='0.1' transform='translate(2, 2)'/%3E%3Cpath d='M40 55a30 30 0 1 1 60 0c0 28-28 28-28 48a12 12 0 1 1-24 0' fill='none' stroke='%231B365D' stroke-width='6' stroke-opacity='0.15'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+.zellig-white-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(-15 75 75)'%3E%3Cpath d='M40 55a30 30 0 1 1 60 0c0 28-28 28-28 48a12 12 0 1 1-24 0' fill='none' stroke='%23FFFFFF' stroke-width='6' stroke-opacity='0.05' transform='translate(2, 2)'/%3E%3Cpath d='M40 55a30 30 0 1 1 60 0c0 28-28 28-28 48a12 12 0 1 1-24 0' fill='none' stroke='%23FFFFFF' stroke-width='6' stroke-opacity='0.1'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+.zellig-text-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z' fill='%231B365D' fill-opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+.zellig-solutions-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z' fill='%231B365D' fill-opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+.zellig-logo-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z' fill='%23E31E24' fill-opacity='0.4'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+.animate-bounce-slow {
+    animation: bounce 4s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-5%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+/* Wave Animation */
+.wave-bar {
+    perspective: 1000px;
+    transform: rotateX(35deg);
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.3);
+    transition: height 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+/* Navbar Base */
+#navbar {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, background-color, padding, box-shadow;
+}
+
+.nav-container {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group.cursor-pointer {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#nav-logo-text-top, #nav-logo-line, #nav-logo-text-bottom, #nav-logo-bubble-blue {
+    transition: all 0.4s ease;
+}
+
+/* Navbar Scrolled State */
+.navbar-scrolled {
+    @apply py-2;
+}
+
+.navbar-scrolled .nav-container {
+    @apply bg-white/90 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(27,54,93,0.2)] border border-white/60 rounded-[3rem] px-10 py-2 mx-4 md:mx-auto max-w-6xl;
+}
+
+.navbar-scrolled #nav-logo-text-top {
+    @apply text-primary;
+}
+
+.navbar-scrolled #nav-logo-line {
+    @apply bg-primary;
+}
+
+.navbar-scrolled #nav-logo-text-bottom {
+    @apply text-primary/60;
+}
+
+.navbar-scrolled #nav-logo-bubble-blue {
+    @apply bg-primary;
+}
+
+.navbar-scrolled #nav-logo-bubble-blue svg {
+    @apply text-white;
+}
+
+.navbar-scrolled .nav-link {
+    @apply text-primary/70 hover:text-accent;
+}
+
+.navbar-scrolled #mobile-menu-btn {
+    @apply text-primary bg-primary/5;
+}
+
+/* Active Nav Link */
+.active-nav-link {
+    @apply text-accent !important scale-105;
+}
+
+.active-nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-accent rounded-full transform scale-x-100 transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link {
+    @apply transition-all duration-300 relative;
+}
+
+.nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-0.5 bg-accent rounded-full transform scale-x-0 transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) origin-left;
+}
+
+.nav-link:hover::after {
+    @apply scale-x-100;
+}
+
+/* Mobile Menu Active State */
+.mobile-nav-link.active-nav-link {
+    @apply text-accent translate-x-2;
+}
+
+.mobile-nav-link.active-nav-link i {
+    @apply opacity-100 translate-x-0;
+}
+
+/* Mobile Optimization & Touch Targets */
+@media (max-width: 768px) {
+    .navbar-scrolled .nav-container {
+        @apply px-4 py-2 mx-2 rounded-2xl;
     }
 
-    // 0. Configuration
-    const CONFIG = {
-        SCROLL_THRESHOLD_NAV: 60,
-        SCROLL_THRESHOLD_TASKBAR: 100,
-        SCROLL_THRESHOLD_BACK_TO_TOP: 800,
-        SCROLL_THRESHOLD_FLOATING_CTA: 400,
-        NAV_OFFSET: 80,
-        ANIMATION_DURATION: 500,
-        POPUP_DELAY: 8000, // Increased for better UX
-        SCROLL_POPUP_THRESHOLD: 75
-    };
+    #nav-logo-text-top { font-size: 14px !important; }
+    #nav-logo-text-bottom { font-size: 8px !important; }
 
-    // Global state to track active overlays
-    const state = {
-        isOverlayActive: false,
-        activeOverlay: null
-    };
-
-    const setOverlayState = (isActive, element = null) => {
-        state.isOverlayActive = isActive;
-        state.activeOverlay = element;
-        document.body.style.overflow = isActive ? 'hidden' : '';
-    };
-
-    // 1. Loading Screen
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                loadingScreen.style.opacity = '0';
-                loadingScreen.style.backdropFilter = 'blur(0px)';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 600);
-            }, 400); 
-        });
-        
-        // Fallback if window load takes too long
-        setTimeout(() => {
-            if (loadingScreen.style.display !== 'none') {
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 600);
-            }
-        }, 3000);
+    button, 
+    a.btn,
+    .mobile-nav-link,
+    .mobile-taskbar-link {
+        min-height: 48px; /* Standard mobile touch target */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    // 1b. Scroll Progress Bar
-    const progressBar = document.createElement('div');
-    progressBar.id = 'scroll-progress';
-    progressBar.className = 'fixed top-0 left-0 h-1 bg-accent z-[1001] transition-all duration-300 ease-out pointer-events-none opacity-0';
-    progressBar.style.width = '0%';
-    document.body.appendChild(progressBar);
-
-    // 2. Navbar Scroll Effects
-    const navbar = document.getElementById('navbar');
-    const mobileTaskbar = document.getElementById('mobile-taskbar');
-    const navLogo = document.querySelector('.group.cursor-pointer'); 
-    let lastScrollTop = 0;
-    const scrollThreshold = 120;
-    let isScrolling = false;
-
-    const updateNavbarAndProgress = () => {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (currentScroll / height) * 100;
-        
-        // Update Progress Bar
-        if (progressBar) {
-            progressBar.style.width = scrolled + "%";
-            progressBar.style.opacity = currentScroll < 20 ? '0' : '1';
-        }
-
-        // 2a. Background, Padding and Logo Scale Transition
-        if (currentScroll > CONFIG.SCROLL_THRESHOLD_NAV) {
-            navbar.classList.add('navbar-scrolled');
-            navbar.classList.remove('py-3', 'md:py-6');
-            navbar.classList.add('py-2');
-            if (navLogo) navLogo.style.transform = 'scale(0.92)';
-            
-            // Show Mobile Taskbar
-            if (mobileTaskbar) {
-                mobileTaskbar.classList.remove('translate-y-20', 'opacity-0');
-                mobileTaskbar.classList.add('translate-y-0', 'opacity-100');
-            }
-        } else {
-            navbar.classList.remove('navbar-scrolled');
-            navbar.classList.remove('py-2');
-            navbar.classList.add('py-3', 'md:py-6');
-            if (navLogo) navLogo.style.transform = 'scale(1)';
-
-            // Hide Mobile Taskbar near top
-            if (mobileTaskbar) {
-                mobileTaskbar.classList.add('translate-y-20', 'opacity-0');
-                mobileTaskbar.classList.remove('translate-y-0', 'opacity-100');
-            }
-        }
-
-        // 2b. Navbar Appearance Transition (Sticky & Persistent)
-        // We removed the hide-on-scroll-down logic to keep it sticky as requested.
-        navbar.style.transform = 'translateY(0)';
-        if (progressBar) progressBar.style.transform = 'translateY(0)';
-        
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        isScrolling = false;
-    };
-
-    window.addEventListener('scroll', () => {
-        if (!isScrolling) {
-            window.requestAnimationFrame(updateNavbarAndProgress);
-            isScrolling = true;
-        }
-    }, { passive: true });
-
-    updateNavbarAndProgress(); // Initial call
-
-    // 2c. Active Link Highlighting (Intersection Observer)
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    const mobileTaskbarLinks = document.querySelectorAll('.mobile-taskbar-link');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
-    };
-
-    const updateAllLinks = (targetId) => {
-        const updateLinkState = (links) => {
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                const isActive = href === `#${targetId}`;
-                link.classList.toggle('active-nav-link', isActive);
-                if (isActive) link.setAttribute('aria-current', 'page');
-                else link.removeAttribute('aria-current');
-            });
-        };
-        updateLinkState(navLinks);
-        updateLinkState(mobileNavLinks);
-        updateLinkState(mobileTaskbarLinks);
-    };
-
-    const observerCallback = (entries) => {
-        if (window.scrollY < 100) {
-            updateAllLinks('home');
-            return;
-        }
-
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                updateAllLinks(id);
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    sections.forEach(section => observer.observe(section));
-
-    // Initial check for active link
-    observerCallback([]);
-
-    // Scroll listener for top of page active state
-    window.addEventListener('scroll', () => {
-        if (window.scrollY < 100) {
-            observerCallback([]);
-        }
-    });
-
-    // Ensure smooth scroll for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const headerOffset = CONFIG.NAV_OFFSET;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
-
-    if (mobileMenuBtn && mobileMenu && mobileMenuOverlay) {
-        const openMenu = () => {
-            if (state.isOverlayActive) return;
-            setOverlayState(true, mobileMenu);
-            mobileMenu.classList.remove('hidden');
-            mobileMenu.classList.add('flex');
-            mobileMenuOverlay.classList.remove('hidden');
-            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-            setTimeout(() => {
-                mobileMenu.style.transform = 'translateX(0)';
-                mobileMenuOverlay.style.opacity = '1';
-                
-                // Staggered animation for links
-                mobileNavLinks.forEach((link, index) => {
-                    link.style.opacity = '0';
-                    link.style.transform = 'translateX(20px)';
-                    setTimeout(() => {
-                        link.style.transition = 'all 0.4s ease-out';
-                        link.style.opacity = '1';
-                        link.style.transform = 'translateX(0)';
-                    }, 100 + (index * 50));
-                });
-            }, 10);
-        };
-
-        const closeMenu = () => {
-            mobileMenu.style.transform = 'translateX(100%)';
-            mobileMenuOverlay.style.opacity = '0';
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            setTimeout(() => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-                mobileMenuOverlay.classList.add('hidden');
-                setOverlayState(false);
-            }, 500);
-        };
-
-        mobileMenuBtn.addEventListener('click', openMenu);
-        if (mobileMenuTrigger) mobileMenuTrigger.addEventListener('click', openMenu);
-        if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
-        mobileMenuOverlay.addEventListener('click', closeMenu);
-        mobileNavLinks.forEach(link => link.addEventListener('click', closeMenu));
+    input, 
+    select, 
+    textarea {
+        font-size: 16px !important; /* Prevent iOS zoom on focus */
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
     }
 
-    // 3. Hero Slider
-    const heroImages = [
-        "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80"
-    ];
-    let currentHeroIndex = 0;
-    const heroImageElement = document.getElementById('hero-image');
-
-    if (heroImageElement) {
-        setInterval(() => {
-            currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-            heroImageElement.style.opacity = '0';
-            setTimeout(() => {
-                heroImageElement.src = heroImages[currentHeroIndex];
-                heroImageElement.style.opacity = '0.4'; // Maintain opacity from CSS
-            }, 500);
-        }, 5000);
+    h1 { @apply text-3xl leading-tight !important; }
+    h2 { @apply text-2xl leading-tight !important; }
+    h3 { @apply text-xl leading-snug !important; }
+    
+    section {
+        @apply py-12 !important; /* Slightly reduced padding for mobile */
     }
 
-    // 4. Brands Marquee
-    // Logic removed as content is now hardcoded in index.html for better performance in classic version.
-
-    // 5. 3D Wave Animation
-    const waveBarsContainer = document.getElementById('wave-bars');
-    if (waveBarsContainer) {
-        const barCount = 40;
-        const bars = [];
-
-        for (let i = 0; i < barCount; i++) {
-            const bar = document.createElement('div');
-            // Change gradient from primary/accent to red/blue
-            bar.className = 'wave-bar w-1 sm:w-2 bg-gradient-to-t from-[#E31E24] to-[#1B365D] rounded-full opacity-60 transition-all duration-1000';
-            bar.style.height = '20%';
-            waveBarsContainer.appendChild(bar);
-            bars.push(bar);
-        }
-
-        setInterval(() => {
-            const time = Date.now() / 1000;
-            bars.forEach((bar, i) => {
-                const height = 30 + Math.sin(time * 2 + i * 0.2) * 25 + Math.cos(time * 1.5 + i * 0.3) * 15;
-                const opacity = 0.6 + Math.sin(time + i * 0.1) * 0.4;
-                bar.style.height = `${height}%`;
-                bar.style.opacity = opacity;
-            });
-        }, 100);
+    .hero-img {
+        object-position: 70% center; /* Better focus on mobile */
     }
+}
 
-    // 6. FAQ Accordion
-    // Since FAQ is injected by JS in React version but hardcoded here, we need to handle it differently if it's hardcoded.
-    // Let's assume it's hardcoded in index.html now.
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const button = item.querySelector('button');
-        const content = item.querySelector('.faq-content');
-        const icon = item.querySelector('.faq-icon');
+/* Mobile Taskbar Active State */
+.mobile-taskbar-link {
+    @apply transition-all duration-200 active:scale-90;
+}
 
-        if (button && content && icon) {
-            button.addEventListener('click', () => {
-                const isOpen = !content.classList.contains('hidden');
-                
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    const otherContent = otherItem.querySelector('.faq-content');
-                    const otherIcon = otherItem.querySelector('.faq-icon');
-                    if (otherContent) otherContent.classList.add('hidden');
-                    if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-                });
+.mobile-taskbar-link.active-nav-link i {
+    @apply text-accent scale-110;
+}
 
-                if (!isOpen) {
-                    content.classList.remove('hidden');
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            });
-        }
-    });
+.mobile-taskbar-link.active-nav-link span {
+    @apply text-primary opacity-100;
+}
 
-    // 7. Contact Form
-    const contactForm = document.getElementById('contact-form');
-    const formSuccess = document.getElementById('form-success');
-    if (contactForm && formSuccess) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Basic validation feedback
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i data-lucide="loader-2" class="animate-spin mr-2"></i> Envoi en cours...';
-            if (window.lucide) window.lucide.createIcons();
+.mobile-taskbar-link.active-nav-link div {
+    @apply scale-100 opacity-100;
+}
 
-            const formData = new FormData(contactForm);
-            console.log('Form submitted:', Object.fromEntries(formData));
-            
-            // Simulate API call
-            setTimeout(() => {
-                contactForm.classList.add('hidden');
-                formSuccess.classList.remove('hidden');
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-                
-                setTimeout(() => {
-                    formSuccess.classList.add('hidden');
-                    contactForm.classList.remove('hidden');
-                    contactForm.reset();
-                }, 5000);
-            }, 1500);
-        });
-    }
+/* Safe area for modern devices */
+#mobile-taskbar {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
 
-    // 8. CTA Popups
-    const ctaPopup = document.getElementById('cta-popup');
-    const closePopupBtn = document.getElementById('close-popup-btn');
-    const popupCtaBtn = document.getElementById('popup-cta-btn');
+/* 3D Button Style */
+.btn-3d {
+    position: relative;
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    background: var(--accent);
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 0 #991b1b, 0 15px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+}
 
-    const exitPopup = document.getElementById('exit-popup');
-    const closeExitBtn = document.getElementById('close-exit-btn');
-    const exitCtaBtn = document.getElementById('exit-cta-btn');
+.btn-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #991b1b, 0 10px 15px rgba(0, 0, 0, 0.2);
+}
 
-    const scrollPopup = document.getElementById('scroll-popup');
-    const closeScrollBtn = document.getElementById('close-scroll-btn');
+.btn-3d:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #991b1b, 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
-    // Global function to open the test modal
-    window.openTestModal = () => {
-        if (state.isOverlayActive) return;
-        const testModal = document.getElementById('test-modal');
-        if (testModal) {
-            setOverlayState(true, testModal);
-            testModal.classList.remove('hidden');
-            testModal.classList.add('flex');
-            window.nextTestStep(1);
-            setTimeout(() => {
-                testModal.style.opacity = '1';
-                const innerDiv = testModal.querySelector('div');
-                if (innerDiv) innerDiv.style.transform = 'scale(1)';
-            }, 10);
-        }
-    };
+/* Floating 3D Button Animation */
+@keyframes float-3d {
+    0%, 100% { transform: translateY(-4px) rotateX(0deg); }
+    50% { transform: translateY(-8px) rotateX(5deg); }
+}
 
-    window.closeTestModal = () => {
-        const testModal = document.getElementById('test-modal');
-        if (testModal) {
-            testModal.style.opacity = '0';
-            const innerDiv = testModal.querySelector('div');
-            if (innerDiv) innerDiv.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                testModal.classList.add('hidden');
-                testModal.classList.remove('flex');
-                setOverlayState(false);
-            }, 300);
-        }
-    };
+.animate-float-3d {
+    animation: float-3d 3s ease-in-out infinite;
+}
 
-    window.nextTestStep = (step) => {
-        const steps = document.querySelectorAll('.test-step');
-        steps.forEach(s => s.classList.add('hidden'));
-        const nextStep = document.getElementById(`test-step-${step}`);
-        if (nextStep) {
-            nextStep.classList.remove('hidden');
-            // Re-initialize icons for dynamic content
-            if (window.lucide) window.lucide.createIcons();
-        }
-    };
+@keyframes icon-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
 
-    const testForm = document.getElementById('test-form');
-    if (testForm) {
-        testForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const steps = document.querySelectorAll('.test-step');
-            steps.forEach(s => s.classList.add('hidden'));
-            const success = document.getElementById('test-success');
-            if (success) success.classList.remove('hidden');
-            
-            setTimeout(() => {
-                window.closeTestModal();
-            }, 4000);
-        });
-    }
+.group-hover\:animate-icon-bounce {
+    animation: icon-bounce 1.2s ease-in-out infinite;
+}
 
-    // Time-based Popup
-    if (ctaPopup) {
-        const hasShownPopup = sessionStorage.getItem('hasShownPopup');
-        if (!hasShownPopup) {
-            setTimeout(() => {
-                if (state.isOverlayActive) return;
-                ctaPopup.classList.remove('hidden');
-                ctaPopup.classList.add('flex');
-                setOverlayState(true, ctaPopup);
-                setTimeout(() => {
-                    ctaPopup.style.opacity = '1';
-                    const innerDiv = ctaPopup.querySelector('div');
-                    if (innerDiv) innerDiv.style.transform = 'scale(1)';
-                }, 10);
-                sessionStorage.setItem('hasShownPopup', 'true');
-            }, CONFIG.POPUP_DELAY);
-        }
+/* Global Icon Style Refinement (Duotone & Modern) */
+i[data-lucide] svg, 
+svg.lucide {
+    stroke-width: 1.6px !important;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: currentColor;
+    fill-opacity: 0.1; /* Subtle Duotone effect */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
 
-        const closePopup = () => {
-            ctaPopup.style.opacity = '0';
-            const innerDiv = ctaPopup.querySelector('div');
-            if (innerDiv) innerDiv.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                ctaPopup.classList.add('hidden');
-                ctaPopup.classList.remove('flex');
-                setOverlayState(false);
-            }, 300);
-        };
+/* Interactive hover effects for icons */
+.group:hover i[data-lucide] svg,
+.group:hover svg.lucide,
+a:hover i[data-lucide] svg,
+button:hover i[data-lucide] svg {
+    fill-opacity: 0.25;
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 0 12px currentColor);
+}
 
-        if (closePopupBtn) closePopupBtn.addEventListener('click', closePopup);
-        if (popupCtaBtn) popupCtaBtn.addEventListener('click', closePopup);
-        ctaPopup.addEventListener('click', (e) => {
-            if (e.target === ctaPopup) closePopup();
-        });
-    }
+/* Custom Scrollbar for Premium Feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-    // Exit Intent Popup
-    if (exitPopup) {
-        document.addEventListener('mouseleave', (e) => {
-            if (e.clientY < 0 && !sessionStorage.getItem('hasShownExit') && !state.isOverlayActive) {
-                exitPopup.classList.remove('hidden');
-                exitPopup.classList.add('flex');
-                setOverlayState(true, exitPopup);
-                setTimeout(() => {
-                    exitPopup.style.opacity = '1';
-                    const innerDiv = exitPopup.querySelector('div');
-                    if (innerDiv) innerDiv.style.transform = 'scale(1)';
-                }, 10);
-                sessionStorage.setItem('hasShownExit', 'true');
-            }
-        });
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
 
-        const closeExit = () => {
-            exitPopup.style.opacity = '0';
-            const innerDiv = exitPopup.querySelector('div');
-            if (innerDiv) innerDiv.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                exitPopup.classList.add('hidden');
-                exitPopup.classList.remove('flex');
-                setOverlayState(false);
-            }, 300);
-        };
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
 
-        if (closeExitBtn) closeExitBtn.addEventListener('click', closeExit);
-        if (exitCtaBtn) exitCtaBtn.addEventListener('click', closeExit);
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
 
-    // Scroll-triggered Popup
-    if (scrollPopup) {
-        let hasShownScroll = false;
-        window.addEventListener('scroll', () => {
-            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            if (scrollPercent > CONFIG.SCROLL_POPUP_THRESHOLD && !hasShownScroll && !state.isOverlayActive) {
-                scrollPopup.classList.remove('hidden');
-                setTimeout(() => {
-                    scrollPopup.style.opacity = '1';
-                    scrollPopup.style.transform = 'translateX(0)';
-                }, 10);
-                hasShownScroll = true;
-            }
-        });
+/* Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
 
-        const closeScroll = () => {
-            scrollPopup.style.opacity = '0';
-            scrollPopup.style.transform = 'translateX(-100%)';
-            setTimeout(() => {
-                scrollPopup.classList.add('hidden');
-            }, 300);
-        };
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        if (closeScrollBtn) closeScrollBtn.addEventListener('click', closeScroll);
-    }
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    // 9. Sticky CTA Visibility
-    const backToTop = document.getElementById('back-to-top');
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const isMobile = window.innerWidth < 768;
-            
-            // Back to Top logic
-            if (backToTop) {
-                if (scrollY > CONFIG.SCROLL_THRESHOLD_BACK_TO_TOP) {
-                    backToTop.classList.remove('pointer-events-none');
-                    backToTop.style.opacity = '1';
-                    backToTop.style.transform = 'translateY(0)';
-                } else {
-                    backToTop.classList.add('pointer-events-none');
-                    backToTop.style.opacity = '0';
-                    backToTop.style.transform = 'translateY(10px)';
-                }
-            }
-        }, { passive: true });
+.reveal-left.active, .reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-        if (backToTop) {
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-    }
+/* Staggered Delay Classes */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
 
-    // 10. Social Sharing
-    const shareBtns = document.querySelectorAll('.share-btn');
-    shareBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const platform = btn.getAttribute('data-platform');
-            const text = encodeURIComponent(btn.getAttribute('data-text'));
-            const url = encodeURIComponent(window.location.href);
-            let shareUrl = '';
+/* Premium Card Hover Effect */
+.premium-card {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-            switch (platform) {
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`;
-                    break;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
-                    break;
-                case 'linkedin':
-                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-                    break;
-                case 'copy':
-                    const fullText = `${decodeURIComponent(text)} ${window.location.href}`;
-                    navigator.clipboard.writeText(fullText).then(() => {
-                        const originalIcon = btn.innerHTML;
-                        btn.innerHTML = '<i data-lucide="check" size="14"></i>';
-                        if (window.lucide) window.lucide.createIcons();
-                        btn.classList.add('text-green-500');
-                        setTimeout(() => {
-                            btn.innerHTML = originalIcon;
-                            if (window.lucide) window.lucide.createIcons();
-                            btn.classList.remove('text-green-500');
-                        }, 2000);
-                    });
-                    return;
-            }
+.premium-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px -15px rgba(27, 54, 93, 0.15);
+}
 
-            if (shareUrl) {
-                window.open(shareUrl, '_blank', 'width=600,height=400');
-            }
-        });
-    });
+/* Form Validation Styles */
+.form-input-error {
+    @apply border-red-500 focus:ring-red-500/20 !important;
+}
 
-    // 11. Cookie Consent Banner
-    const cookieBanner = document.getElementById('cookie-banner');
-    const acceptCookies = document.getElementById('accept-cookies');
-    const declineCookies = document.getElementById('decline-cookies');
+.form-error-msg {
+    @apply text-red-500 text-[10px] font-bold uppercase mt-1 ml-1;
+}
 
-    if (cookieBanner && acceptCookies && declineCookies) {
-        // Check if user has already made a choice
-        const cookieChoice = localStorage.getItem('cookie-consent');
-        
-        if (!cookieChoice) {
-            // Show banner after a short delay
-            setTimeout(() => {
-                cookieBanner.classList.remove('translate-y-full');
-                cookieBanner.classList.add('translate-y-0');
-            }, 2000);
-        }
+/* Floating Animation for Icons */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
 
-        const hideBanner = () => {
-            cookieBanner.classList.remove('translate-y-0');
-            cookieBanner.classList.add('translate-y-full');
-        };
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
 
-        acceptCookies.addEventListener('click', () => {
-            localStorage.setItem('cookie-consent', 'accepted');
-            hideBanner();
-        });
+/* Specific glow for accent icons and containers */
+.text-accent i[data-lucide] svg,
+.bg-accent i[data-lucide] svg,
+.bg-accent\/30 i[data-lucide] svg,
+.bg-accent\/10 i[data-lucide] svg {
+    filter: drop-shadow(0 0 8px rgba(227, 30, 36, 0.4));
+    fill-opacity: 0.2;
+}
 
-        declineCookies.addEventListener('click', () => {
-            localStorage.setItem('cookie-consent', 'declined');
-            hideBanner();
-        });
-    }
+/* Icon container pulse effect on hover */
+.group:hover .bg-accent\/30,
+.group:hover .bg-primary\/30,
+.group:hover .bg-white\/10 {
+    box-shadow: 0 0 20px currentColor;
+    border-color: currentColor;
+}
 
-    // 12. Mobile Taskbar Haptic Feedback & Interaction
-    const taskbarLinks = document.querySelectorAll('.mobile-taskbar-link, #mobile-taskbar a, #mobile-taskbar button');
-    taskbarLinks.forEach(link => {
-        link.addEventListener('touchstart', () => {
-            link.style.transform = 'scale(0.9)';
-        }, { passive: true });
-        
-        link.addEventListener('touchend', () => {
-            link.style.transform = 'scale(1)';
-        }, { passive: true });
-        
-        link.addEventListener('touchcancel', () => {
-            link.style.transform = 'scale(1)';
-        }, { passive: true });
-    });
+/* Mobile Nav Active */
+.mobile-nav-link.active-nav-link {
+    @apply text-accent translate-x-2;
+}
 
-    // 13. Reveal Animations on Scroll
+.mobile-nav-link.active-nav-link span {
+    @apply opacity-100 scale-125;
+}
+
+/* Mobile Menu Open */
+#mobile-menu.open {
+    display: flex;
+    transform: translateX(0);
+}
+
+/* Popup Visible */
+#cta-popup.visible {
+    display: flex;
+    opacity: 1;
+}
+
+#cta-popup.visible > div {
+    transform: scale(1);
+}
+
+/* Sticky CTA Visible */
+#sticky-cta.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
