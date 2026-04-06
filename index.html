@@ -1838,3 +1838,49 @@
         });
     </script>
 </body>
+        <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const navLogoImg = document.getElementById('nav-logo-img');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-lg', 'py-4');
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navLogoImg.classList.remove('brightness-0', 'invert');
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('text-white/90');
+                    link.classList.add('text-primary');
+                });
+                document.getElementById('mobile-menu-button').classList.remove('text-white');
+                document.getElementById('mobile-menu-button').classList.add('text-primary');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-lg', 'py-4');
+                navbar.classList.add('bg-transparent', 'py-6');
+                navLogoImg.classList.add('brightness-0', 'invert');
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.add('text-white/90');
+                    link.classList.remove('text-primary');
+                });
+                document.getElementById('mobile-menu-button').classList.add('text-white');
+                document.getElementById('mobile-menu-button').classList.remove('text-primary');
+            }
+        });
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 700);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
