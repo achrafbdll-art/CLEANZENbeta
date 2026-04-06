@@ -644,4 +644,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     });
 
-});
+    // 13. Reveal Animations on Scroll
